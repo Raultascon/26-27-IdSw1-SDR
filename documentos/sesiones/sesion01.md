@@ -1,3 +1,37 @@
+# Preguntas de la 1.ª reunión con el cliente (26/10/2026)
+
+## 1. Que el cliente nos ponga en contexto (descubrir el proyecto)
+
+- ¿A qué se dedica?
+- ¿Qué es lo que quieres plantear?
+- ¿Qué quieres que este proyecto resuelva?
+- ¿Cómo le gustaría que solucione el problema el proyecto?
+- ¿Qué le gustaría conseguir al solucionar el problema?
+
+## 2. Entender cómo funciona el proyecto
+
+- ¿Qué tareas realiza este proyecto?
+- ¿Podrías explicarnos un caso real de principio a fin?
+- ¿Qué personas/actores están involucrados en el proyecto?
+- ¿Emplea herramientas o documentos externos al proyecto?
+- ¿Cómo se transmite la información entre personas? (Relaciones)
+- ¿Qué pasa cuando el proceso termina?
+
+## 3. Descubrir reglas y problemas reales
+
+- ¿Qué condiciones se tienen que cumplir para que el proceso avance?
+- ¿Quién puede tomar ciertas decisiones? (Jerarquía)
+- ¿Puede existir alguna situación en la que el sistema funcione de otra manera?
+- ¿Qué sucede cuando falta información o alguien comete algún error? (Control de errores)
+- ¿Nos puede mostrar algún ejemplo?
+
+## 4. Entender las expectativas
+
+- ¿Qué considera más importante mejorar?
+- ¿Cómo sabría que el proyecto ha tenido éxito?
+- ¿Hay aspectos de su forma de trabajar que considere importante mantener?
+
+
 # Notas de la sesión del 26-10-2026
 
 ## Idea general
