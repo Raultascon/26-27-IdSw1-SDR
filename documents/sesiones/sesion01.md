@@ -1,4 +1,4 @@
-# Proyecto Ingeniería de Software
+# Notas de la sesión del 26-10-2026
 
 ## Idea general
 
