@@ -1,0 +1,169 @@
+@startuml
+skinparam style strictuml
+hide empty members
+
+' ========================================================
+' CLASES CONCEPTUALES DEL DOMINIO
+' ========================================================
+
+class Carrera {
+ - nombre
+}
+
+class Asignatura {
+ - nombre
+ - código
+}
+
+class Semestre {
+ - periodo
+ - añoAcadémico
+}
+
+abstract class Estudiante {
+ - nombre
+ - apellidos
+}
+
+class EstudianteOrdinario {
+}
+
+class EstudianteErasmus {
+}
+
+abstract class Profesor {
+ - nombre
+ - apellidos
+}
+
+class ProfesorFijo {
+}
+
+class ProfesorTemporal {
+}
+
+class Administrador {
+ - nombre
+}
+
+class PanalUniversitario {
+}
+
+class Notificacion {
+ - mensaje
+ - enlaceAcceso
+}
+
+class CalendarioEvaluacion {
+ - semanaInicio
+ - duracionDias
+}
+
+class PlantillaCuestionario {
+ - versión
+}
+
+class ItemObligatorio {
+ - númeroPregunta
+ - enunciado
+}
+
+class PreguntaDeDesarrollo {
+ - enunciado
+}
+
+class EncuestaSemestral {
+}
+
+class EvaluacionDocente {
+}
+
+class ValoracionEscala {
+}
+
+class ComentarioOpcional {
+ - textoLibre
+}
+
+class ResumenDocente {
+ - totalEncuestasRecibidas
+ - mediaGlobalAsignatura
+}
+
+class MediaPorItem {
+ - valorMedia
+}
+
+class ResumenGlobalAdmin {
+ - fechaGeneracion
+}
+
+class InformeExportable {
+}
+
+' ========================================================
+' ENUMERADOS DEL DOMINIO
+' ========================================================
+
+enum EscalaValoracion {
+ - 1 (Muy en desacuerdo)
+ - 2 (En desacuerdo)
+ - 3 (Neutral)
+ - 4 (De acuerdo)
+ - 5 (Muy de acuerdo)
+}
+
+enum FormatoExportacion {
+ - PDF
+ - Excel
+}
+
+' ========================================================
+' JERARQUÍAS (HERENCIA)
+' ========================================================
+
+Estudiante <|-- EstudianteOrdinario
+Estudiante <|-- EstudianteErasmus
+Profesor <|-- ProfesorFijo
+Profesor <|-- ProfesorTemporal
+
+' ========================================================
+' RELACIONES CONCEPTUALES
+' ========================================================
+
+' Marco Académico
+Estudiante -u-* Carrera : estudia
+Asignatura -u-* Carrera : pertenece
+Estudiante -u-* Asignatura : cursa
+Profesor -u-* Asignatura : enseña
+Semestre -u-* CalendarioEvaluacion : organiza
+
+' Portal y Acceso
+EstudianteOrdinario -u-o PanalUniversitario : entra
+PanalUniversitario -u-* Notificacion : muestra
+Notificacion --> EncuestaSemestral : abre
+
+' Cuestionario Base
+PlantillaCuestionario -u-* ItemObligatorio : contiene
+PlantillaCuestionario -u-* PreguntaDeDesarrollo : contiene
+
+' Rellenar la Encuesta
+EstudianteOrdinario -u-o EncuestaSemestral : responde
+EncuestaSemestral -u-* EvaluacionDocente : separa en pestañas por
+EvaluacionDocente --> Profesor : califica
+EvaluacionDocente --> Asignatura : corresponde
+EvaluacionDocente -u-* ValoracionEscala : puntúa
+EvaluacionDocente -u-* ComentarioOpcional : aporta
+ValoracionEscala ..> EscalaValoracion
+
+' Resultados e Informes
+EvaluacionDocente -u-* ResumenDocente : genera
+ProfesorFijo -u-o ResumenDocente : consulta
+ResumenDocente -u-* MediaPorItem : detalla
+Administrador -u-o ResumenGlobalAdmin : supervisa
+ResumenGlobalAdmin -u-* ResumenDocente : consolida
+ResumenDocente ..> InformeExportable : genera
+ResumenGlobalAdmin ..> InformeExportable : genera
+InformeExportable ..> FormatoExportacion
+
+@enduml
