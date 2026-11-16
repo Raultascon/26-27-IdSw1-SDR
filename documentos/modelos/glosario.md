@@ -4,23 +4,22 @@
 | :--- | :--- |
 | **Estudiante Ordinario** | Alumno matriculado formalmente en la universidad que cursa materias y tiene derecho a opinar sobre sus profesores. |
 | **Estudiante Erasmus** | Estudiante extranjero que viene de intercambio temporal; queda fuera del proceso y no recibe las encuestas. |
-| **Profesor Fijo** | Docente titular que da la clase con normalidad y que puede entrar a ver sus notas al terminar el periodo de votación. |
-| **Profesor Temporal** | Docente que entra como sustituto o que se da de baja antes de terminar; los alumnos lo valoran por el tiempo que dio clase, pero al marcharse pierde el acceso a la web. |
+| **Profesor Fijo** | Docente titular de la asignatura. Si se da de baja durante el semestre, los alumnos lo siguen evaluando por el tiempo que les dio clase. Al cerrar el plazo recibe sus resultados. |
+| **Profesor Temporal** | Docente que sustituye a un profesor fijo que se ha dado de baja. Los alumnos lo evalúan igual que al fijo, de forma independiente. |
 | **Carrera** | La titulación o grado que estudia el alumno (ej. Informática, ADE). Sirve para que las notas del profesor se muestren separadas según la carrera que cursan sus estudiantes. |
 | **Asignatura** | Materia académica que se imparte durante un semestre y que puede tener uno o varios profesores a cargo. |
 | **Semestre** | El cuatrimestre o periodo de clases en el que se organizan las asignaturas y se lanzan las encuestas. |
-| **Panal Universitario** | El portal web oficial donde los alumnos inician sesión para ver sus asignaturas, recibir avisos y responder las encuestas. |
-| **Notificación** | Aviso que se envía exactamente una sola vez (por correo con enlace y en el propio portal) para invitar al alumno a opinar sobre sus docentes. |
-| **Calendario de Evaluación** | Plan de fechas fijado para las encuestas: se lanzan en la semana 10 del semestre y los alumnos tienen exactamente una semana para responder. |
-| **Plantilla de Cuestionario** | El cuestionario estándar que se usa para todos los profesores por igual, compuesto por 11 preguntas fijas y un espacio para escribir un comentario libre. |
+| **Notificación** | Aviso que invita al alumno a responder su encuesta. Se repite hasta que el alumno la completa. |
+| **Calendario de Evaluación** | Fechas de la encuesta de un semestre, fijadas por el administrador: se lanza en la semana 10 y los alumnos tienen una semana para responder. |
+| **Plantilla de Cuestionario** | El cuestionario estándar, fijado antes de lanzar la encuesta, que se usa para todos los profesores por igual. Tiene 11 preguntas fijas y una pregunta de desarrollo. |
 | **Item Obligatorio** | Cada una de las 11 preguntas fijas del cuestionario, que se deben puntuar obligatoriamente con una nota del 1 al 5. |
 | **Pregunta de Desarrollo** | Espacio voluntario al final de la encuesta donde el estudiante puede escribir una opinión o sugerencia con sus propias palabras. |
-| **Encuesta Semestral** | La vista principal que se le abre al alumno, donde aparecen todos los profesores que le han dado clase ese semestre organizados en pestañas. |
-| **Evaluación Docente** | La valoración individual que se hace de un profesor específico. Se envía y se guarda por profesor terminado, no pregunta a pregunta. |
-| **Valoración Escala** | Nota cuantitativa asignada a un ítem obligatorio según los valores de la escala (1 a 5). |
-| **Comentario Opcional** | Opinión de texto libre escrita por el estudiante para un docente específico. |
-| **Resumen Docente** | El informe final con las notas y comentarios que recibe el profesor sobre su asignatura, separadas por carrera, una vez terminada la semana de encuestas. |
+| **Encuesta Semestral** | La encuesta que recibe cada estudiante ordinario una vez por semestre. Reúne una evaluación por cada profesor y asignatura que ha tenido ese semestre. Responderla no es obligatorio. |
+| **Evaluación Docente** | La valoración de un profesor en una asignatura concreta. Se guarda al terminar cada profesor, no pregunta a pregunta, y una vez terminada no se puede volver atrás. |
+| **Escala de Valoración** | Los cinco valores posibles para puntuar un ítem obligatorio, del 1 al 5. |
+| **Valoración Escala** | Nota de 1 a 5 que el alumno da a un ítem obligatorio concreto dentro de una evaluación docente. |
+| **Comentario Opcional** | Respuesta del alumno a la pregunta de desarrollo para un docente concreto. |
+| **Resumen Docente** | Los resultados que recibe un profesor al cerrarse el plazo, uno por cada asignatura, semestre y carrera de sus alumnos (ej. Informática por un lado y ADE por otro). Incluye la media de cada ítem, la media global, el número de valoraciones y los comentarios opcionales. |
 | **Media Por Item** | Promedio numérico obtenido por el profesor en cada una de las 11 preguntas fijas. |
-| **Administrador** | Responsable general del sistema que fija las fechas del calendario y puede revisar los resultados y comentarios de cualquier profesor y carrera. |
-| **Resumen Global Admin** | Informe integral para el administrador que agrupa los resultados de todas las asignaturas de la universidad. |
-| **Informe Exportable** | Archivo descargable (en PDF o Excel) para guardar o imprimir los resultados y llevarlos a comisiones académicas. |
+| **Administrador** | Único responsable del sistema. Fija las fechas del calendario y puede ver todas las respuestas y resultados. |
+| **Resumen Global Admin** | Vista del administrador que agrupa los resúmenes docentes de todas las asignaturas de un semestre. |
