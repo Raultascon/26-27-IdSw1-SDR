@@ -1,0 +1,84 @@
+@startuml
+title E-02 · Respuestas anónimas y resultados separados por grado
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam objectBackgroundColor #EEF4FA
+skinparam objectBorderColor #486581
+skinparam nodesep 40
+skinparam ranksep 45
+top to bottom direction
+object "ana : Profesor" as ana {
+  nombre = "Ana (ficticio)"
+}
+object "estadistica : Asignatura" as asignatura {
+  nombre = "Estadística"
+}
+object "informatica : Grado" as g1 {
+  nombre = "Informática"
+}
+object "ade : Grado" as g2 {
+  nombre = "ADE"
+}
+object "docInf : Docencia" as d1
+object "docAde : Docencia" as d2
+object "convocatoria : Convocatoria" as convocatoria {
+  fechaApertura = 23/11/2026
+  fechaCierre = 30/11/2026
+}
+object "comun : Cuestionario" as cuestionario {
+  enunciadoObservaciones = "Observaciones de la sesión 01"
+}
+object "item1 : Item" as i1 {
+  numero = 1
+}
+object "item2 : Item" as i2 {
+  numero = 2
+}
+object "respuestaInf : Evaluacion" as e1 {
+  observaciones = "Ejemplos útiles (ficticio)"
+}
+object "respuestaAde : Evaluacion" as e2 {
+  observaciones = ausente
+}
+object "inf1 : Puntuacion" as p11 {
+  valor = 4
+}
+object "inf2 : Puntuacion" as p12 {
+  valor = 5
+}
+object "ade1 : Puntuacion" as p21 {
+  valor = 2
+}
+object "ade2 : Puntuacion" as p22 {
+  valor = 3
+}
+ana -- d1 : imparte
+ana -- d2 : imparte
+asignatura -- d1 : se concreta en
+asignatura -- d2 : se concreta en
+g1 -- d1 : contextualiza
+g2 -- d2 : contextualiza
+d1 -- e1 : es valorada en
+d2 -- e2 : es valorada en
+convocatoria -- e1 : recibe
+convocatoria -- e2 : recibe
+convocatoria -- cuestionario : utiliza
+cuestionario -- i1 : plantea
+cuestionario -- i2 : plantea
+e1 -- p11 : recoge
+e1 -- p12 : recoge
+e2 -- p21 : recoge
+e2 -- p22 : recoge
+i1 -- p11 : recibe respuesta en
+i1 -- p21 : recibe respuesta en
+i2 -- p12 : recibe respuesta en
+i2 -- p22 : recibe respuesta en
+legend bottom
+  Vista parcial; nombres, fechas y respuestas ficticios. No es un conjunto completo de resultados.
+  Se omiten el semestre compartido, 9 ítems y 9 puntuaciones de cada evaluación.
+  Las 11 puntuaciones completas se detallan en escenarios-v3.md; no son respuestas parciales.
+  No hay alumnos ni asignaciones vinculados a las evaluaciones anónimas.
+endlegend
+@enduml
