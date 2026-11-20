@@ -1,0 +1,50 @@
+@startuml
+title Modelo del dominio v3 · Responder una evaluación individual
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam activityBackgroundColor #EDF7F0
+skinparam activityDiamondBackgroundColor #FFF5E5
+
+start
+:Consultar las docencias asignadas;
+if (¿Elegible, plazo abierto y alguna asignación pendiente?) then (sí)
+  :Elegir una asignación pendiente;
+else (no)
+  :No admitir una nueva respuesta;
+  stop
+endif
+
+repeat
+  :Responder los 11 ítems;
+  :Añadir observaciones si se desea;
+  if (¿Abandona o vence el plazo?) then (sí)
+    :Descartar las respuestas parciales actuales;
+    :Conservar las evaluaciones ya enviadas;
+    stop
+  endif
+  :Solicitar el envío individual;
+  if (¿Sigue abierto el plazo y pendiente la asignación?) then (sí)
+  else (no)
+    :No aceptar otro envío;
+    :Conservar las evaluaciones ya enviadas;
+    stop
+  endif
+repeat while (¿Faltan ítems o hay puntuaciones inválidas?) is (sí) not (no)
+
+:Aceptar una Evaluacion con 11 Puntuaciones\ny observaciones opcionales;
+:Marcar la AsignacionEvaluacion como enviada\nsin enlazarla con el contenido anónimo;
+note right
+  Un único hecho de negocio: envío aceptado.
+  El mecanismo de anonimato queda pendiente (D-02).
+end note
+:Conservar la evaluación sin permitir modificarla;
+:Continuar con otra pendiente o abandonar voluntariamente;
+stop
+
+legend bottom
+  El fin de esta actividad no cierra la convocatoria.
+  Los resultados finales se entregan al cierre, a administración y profesorado a la vez (RN-10).
+endlegend
+@enduml
