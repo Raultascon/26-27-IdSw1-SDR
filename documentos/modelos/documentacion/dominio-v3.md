@@ -45,7 +45,7 @@ La multiplicidad se interpreta en el extremo junto al que aparece. `0..*` permit
 | Evaluacion — Puntuacion | Cada evaluación aceptada recoge exactamente 11 puntuaciones; cada puntuación pertenece a 1 evaluación. Una respuesta a medio rellenar no es una Evaluacion conservada ([RN-05](trazabilidad-v3.md#rn-05 "Regla de negocio 05")). |
 | Item — Puntuacion | Cada puntuación responde a 1 ítem; un ítem puede recibir 0..* puntuaciones. Los ítems deben ser los del cuestionario de la convocatoria y no repetirse en una evaluación ([RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04")). |
 
-## Atributos, jerarquía y visibilidad
+## Atributos del modelo
 
 Se incluyen solo atributos con significado para la primera sesión: nombres de conceptos académicos, condición Erasmus, periodo, fechas, enunciados, estado de envío, valor y observaciones. No se añaden datos de relleno para llegar a un número mínimo. **Docencia** no necesita atributos propios en esta versión: se define mediante sus cuatro asociaciones académicas.
 
@@ -55,12 +55,16 @@ Los enunciados normativos son los de la [tabla de ítems de la minuta](../../ses
 
 Las medias, el número de valoraciones y los comentarios son información derivada de las evaluaciones, sin clases de informes ni de exportación. Para cada combinación de **convocatoria, profesor, asignatura y grado** se obtiene el conjunto de evaluaciones correspondiente. Esta agrupación conserva la independencia pedida para cada asignatura y grado.
 
-Si ese conjunto tiene `N > 0` evaluaciones, el cálculo es:
+Según la propuesta [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04"), si ese conjunto tiene `N > 0` evaluaciones, el cálculo es:
 
 - Número de valoraciones: `N` (número de evaluaciones, no número de puntuaciones).
 - Media del ítem `j`: suma de las `N` puntuaciones del ítem `j`, dividida por `N`.
 - Media global: media aritmética de las 11 medias por ítem, equivalente a promediar las `11 × N` puntuaciones, antes de redondear.
 - Comentarios: observaciones presentes en esas evaluaciones, sin identificación del estudiante.
+
+La **media del ítem 11, «Valoración global del profesor»**, se obtiene únicamente de las puntuaciones de esa pregunta. La **media global calculada** resume las puntuaciones de los once ítems según [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04"). Son dos resultados distintos y pueden tener valores diferentes.
+
+Con `N = 0`, el número de valoraciones es cero y las medias no tienen valor; no se dividen entre cero ni se representan como una puntuación cero ([C-06](escenarios-v3.md#c-06 "Comprobación 06")).
 
 ## Envío y conservación
 
@@ -68,7 +72,7 @@ Si ese conjunto tiene `N > 0` evaluaciones, el cálculo es:
 
 [Fuente PlantUML](../diagramas/actividad/actividad.puml).
 
-El diagrama se limita a una evaluación individual. Una asignación pendiente puede abandonarse y retomarse empezando de nuevo; sus respuestas parciales no se conservan. El envío aceptado conserva las once puntuaciones y marca la asignación como enviada, sin enlazar participación y contenido. No hay modificación ni segundo envío. Las evaluaciones anteriores permanecen si se abandona el resto.
+El diagrama se limita a una evaluación individual. Si un envío contiene errores, se completan o corrigen las respuestas durante la misma sesión sin descartarlas. Una asignación pendiente puede abandonarse y retomarse empezando de nuevo; sus respuestas parciales no se conservan. El envío aceptado conserva las once puntuaciones y marca la asignación como enviada, sin enlazar participación y contenido. No hay modificación ni segundo envío. Las evaluaciones anteriores permanecen si se abandona el resto.
 
 El cierre de convocatoria es independiente del final de esta actividad. Los resultados finales se entregan al administrador y al profesorado al mismo tiempo después del cierre.
 

@@ -17,7 +17,7 @@ else (no)
 endif
 
 repeat
-  :Responder los 11 ítems;
+  :Completar o corregir las respuestas de los 11 ítems;
   :Añadir observaciones si se desea;
   if (¿Abandona o vence el plazo?) then (sí)
     :Descartar las respuestas parciales actuales;

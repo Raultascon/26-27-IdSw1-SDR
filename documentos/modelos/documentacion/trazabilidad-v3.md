@@ -4,7 +4,7 @@
 
 Origen funcional: [minuta de la sesión 01 (26/10/2026)](../../sesiones/sesion01.md), en su [revisión 3e37c8f](https://github.com/Raultascon/26-27-IdSw1-SDR/blob/3e37c8f/documentos/sesiones/sesion01.md). Propuesta vinculada al [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16) y a la [discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14).
 
-**RN** identifica una regla recogida en la minuta; no equivale a una aprobación posterior del modelo. **S** identifica una decisión propuesta para representarla. Los [escenarios E-01 y E-02 y las comprobaciones C-01 a C-08](escenarios-v3.md) permiten revisar la propuesta.
+**RN** identifica una regla recogida en la minuta; no equivale a una aprobación posterior del modelo. **S** identifica una decisión propuesta para representarla. Los [escenarios E-01 y E-02 y las comprobaciones C-01 a C-09](escenarios-v3.md) permiten revisar la propuesta.
 
 ## Reglas del negocio
 
@@ -35,7 +35,7 @@ Origen funcional: [minuta de la sesión 01 (26/10/2026)](../../sesiones/sesion01
 Además de las multiplicidades, deben cumplirse estas restricciones:
 
 1. `fechaApertura < fechaCierre`; solo se acepta el envío dentro del plazo y con asignación pendiente.
-2. La docencia de una evaluación y su convocatoria corresponden al mismo semestre.
+2. La docencia de una evaluación y su convocatoria corresponden al mismo semestre, tanto en periodo como en año académico ([C-09](escenarios-v3.md#c-09 "Comprobación 09")).
 3. Una asignación solo puede referirse a una docencia recibida por su estudiante; `esErasmus = verdadero` impide asignarla. La unicidad estudiante–docencia evita duplicar oportunidades dentro del semestre.
 4. Cada evaluación contiene exactamente once puntuaciones, una por cada ítem distinto de su cuestionario, con enteros de 1 a 5. Tener once valores del mismo ítem no es válido.
 5. La ausencia de observaciones es válida. El envío aceptado no crea una relación con la asignación, ni guarda nombre o identificador del estudiante en las respuestas.

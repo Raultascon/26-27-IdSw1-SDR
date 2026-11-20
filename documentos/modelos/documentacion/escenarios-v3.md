@@ -45,7 +45,7 @@ El cuestionario es el de la sesión 01; sus enunciados se toman literalmente de 
 
 Ambas evaluaciones satisfacen [RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04"): once valores válidos y un comentario opcional. Las dos comparten Cuestionario y sus ítems, pero no Docencia. El Semestre compartido se omite en el dibujo y debe ser el mismo para docencias y convocatoria.
 
-**Comprobación aritmética aislada:** si cada fila fuera la única respuesta de su grupo, Informática tendría `N = 1`, medias por ítem iguales a su fila y media global `48/11 ≈ 4,36`; ADE tendría `N = 1` y media global `29/11 ≈ 2,64`. No se calcula una media conjunta de ambos grados. Es un ejemplo de la fórmula [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04").
+**Comprobación aritmética aislada:** si cada fila fuera la única respuesta de su grupo, Informática tendría `N = 1`, medias por ítem iguales a su fila y media global `48/11 ≈ 4,36`; ADE tendría `N = 1` y media global `29/11 ≈ 2,64`. No se calcula una media conjunta de ambos grados. En ese mismo ejemplo, la media del ítem 11 sería 5 en Informática y 3 en ADE, distinta de la media global calculada en cada grupo. Es un ejemplo de la fórmula [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04").
 
 Este escenario cubre [RN-03](trazabilidad-v3.md#rn-03 "Regla de negocio 03"), [RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04") y [RN-07](trazabilidad-v3.md#rn-07 "Regla de negocio 07"). La ausencia de observaciones de ADE es válida; una ausencia de puntuación obligatoria no lo sería.
 
@@ -63,6 +63,7 @@ Son criterios de revisión del modelo, no pruebas de una aplicación implementad
 | <a id="c-06"></a>C-06 | Mismo profesor en dos asignaturas o grados; convocatoria sin respuestas. | Se mantienen agrupaciones diferentes. Con `N = 0`, la propuesta no divide por cero ni muestra una media cero ([RN-07](trazabilidad-v3.md#rn-07 "Regla de negocio 07"), [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04")). |
 | <a id="c-07"></a>C-07 | Envío tras el cierre; estudiante con pendientes al vencer el plazo. | No se admite otro envío ni siguen los avisos. Los resultados finales se hacen disponibles al administrador y profesores al cierre, sin esperar participación completa ([RN-08](trazabilidad-v3.md#rn-08 "Regla de negocio 08") a [RN-10](trazabilidad-v3.md#rn-10 "Regla de negocio 10")). |
 | <a id="c-08"></a>C-08 | Modificar el cuestionario de una convocatoria abierta o usar un ítem de otra plantilla. | Incompatible con la plantilla fija y con la restricción de correspondencia entre evaluación, convocatoria y sus once ítems ([RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04")). |
+| <a id="c-09"></a>C-09 | Intentar asociar una evaluación de la convocatoria del semestre 1 de 2026/27 con una docencia del semestre 2 de 2026/27. | La asociación no es válida: la docencia y la convocatoria de una evaluación deben corresponder al mismo Semestre, tanto en periodo como en año académico ([S-01](trazabilidad-v3.md#s-01 "Decisión propuesta 01")). |
 
 
 

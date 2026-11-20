@@ -10,7 +10,14 @@ La propuesta actual está documentada en [dominio-v3.md](../documentacion/domini
 | --- | --- | --- |
 | v1 | [Issue #8](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/8), [commit aa93fa7](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/aa93fa78f59a17c95670d932ddb26ebf58cecece), [PR #9](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/9). | [PUML recuperado](../historico/v1/dominio-v1.puml), [SVG original](../historico/v1/dominio-v1.svg), [glosario original](../historico/v1/glosario.md). Copias exactas del commit de creación. |
 | v2 | [Issue #12](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/12), [commit 71298ae](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/71298ae44a8dc99bd5cab9b9c6fbfc7701697fd2), [PR #13](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/13). | [PUML](../historico/v2/dominio-v2.puml) y [SVG](../historico/v2/dominio-v2.svg) conservados en el histórico de v2; [glosario v2](../historico/v2/glosario.md) preservado antes de actualizar el glosario vigente. |
-| v3 | [Discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14), [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16), rama `feat/issue-16-mejorar-modelo-dominio-v3`. | Propuesta de clases, dos vistas de objetos, actividad de envío y documentación. Los commits usan `refs #16`; el PR se dirige a `develop`, como los PR #9 y #13. Pendiente de revisión y validación. |
+| v3 | [Discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14), [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16). | Propuesta de clases, dos vistas de objetos, actividad de envío y documentación. Pendiente de revisión y validación. |
+
+Commits principales de v3:
+
+- Modelo conceptual y glosario: [`431cb3d`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/431cb3db5ca17d9ef5feecb8b18e8de1922e0be6).
+- Escenarios y reglas trazables: [`aab2ca0`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/aab2ca06d6aba8775ce2154670b967f9bf1118d6).
+- Organización de la carpeta y revisión de la redacción: [`ddd5cf7`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/ddd5cf7a3c25d453bf0af5e63db7aa0d72a95128).
+- Enlaces entre referencias: [`4e8ff72`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/4e8ff729dbeb96db02582e8605f72472bb1eee88).
 
 El commit de v2 eliminó los archivos de v1. Recuperarlos en `documentos/modelos/historico/v1/` permite comparar sin reescribir el historial ni alterar la autoría original. Su contenido, incluidas agregaciones y composiciones antiguas, se conserva como evidencia histórica: **v3 no utiliza esas relaciones**. No se regeneran las imágenes antiguas ni se corrigen sus errores retrospectivamente.
 
@@ -54,7 +61,7 @@ El ejemplo de Martín es útil como organización, pero no es una plantilla sem�
 | Dos escenarios de objetos y vista dinámica. | Añadidos con datos ficticios y omisiones gráficas expresas. Se elige actividad porque explica mejor el abandono y el envío que un simple estado «pendiente/enviada». |
 | Evolución verificable y fuentes editables. | v1 recuperada, v2 conservada y v3 acompañada de PUML/SVG. |
 | Validación explícita del cliente. | Sigue pendiente. La aprobación interna para trabajar en el issue #16 no equivale a validar el modelo. |
-| Encontrar, priorizar, detallar y prototipar casos de uso. | Trabajo posterior; la identificación ya está en #15. No es un defecto que este PR de dominio no los implemente. |
+| Encontrar, priorizar, detallar y prototipar casos de uso. | Trabajo posterior; la identificación ya está en #15. No forma parte del alcance de esta documentación del dominio. |
 | Navegación, índices generales y presentación del repositorio. | El [README del modelo](../README.md) contiene la guía de lectura del modelo. El README general del repositorio conserva su contenido original. |
 
 La rúbrica histórica valora agregación/composición y menciona cantidades de atributos, pero no se introducen ahora: el alcance pedido es trabajar sin esas relaciones y evitar atributos inventados. La adecuación a la evaluación de este curso deberá contrastarse con el profesor cuando corresponda.
