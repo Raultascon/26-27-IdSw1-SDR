@@ -37,7 +37,6 @@ repeat while (¿Faltan ítems o hay puntuaciones inválidas?) is (sí) not (no)
 :Marcar la AsignacionEvaluacion como enviada\nsin enlazarla con el contenido anónimo;
 note right
   Un único hecho de negocio: envío aceptado.
-  El mecanismo de anonimato queda pendiente (D-02).
 end note
 :Conservar la evaluación sin permitir modificarla;
 :Continuar con otra pendiente o abandonar voluntariamente;

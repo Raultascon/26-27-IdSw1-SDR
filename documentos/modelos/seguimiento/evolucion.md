@@ -1,18 +1,18 @@
 # Evolución del modelo del dominio
 
-[Índice provisional](indice-provisional.md) · [← Reglas y dudas](trazabilidad-v3.md) · [Uso de IA →](AI-uso.md)
+[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](AI-uso.md)
 
-La propuesta actual está documentada en [dominio-v3.md](dominio-v3.md). Este documento conserva la procedencia de las versiones y explica sus cambios; no convierte los modelos antiguos en modelos vigentes.
+La propuesta actual está documentada en [dominio-v3.md](../documentacion/dominio-v3.md). Este documento conserva la procedencia de las versiones y explica sus cambios; no convierte los modelos antiguos en modelos vigentes.
 
 ## Versiones y evidencia
 
 | Versión | Evidencia original | Artefactos y situación |
 | --- | --- | --- |
-| v1 | [Issue #8](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/8), [commit aa93fa7](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/aa93fa78f59a17c95670d932ddb26ebf58cecece), [PR #9](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/9). | [PUML recuperado](historico/v1/dominio-v1.puml), [SVG original](historico/v1/dominio-v1.svg), [glosario original](historico/v1/glosario.md). Copias exactas del commit de creación. |
-| v2 | [Issue #12](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/12), [commit 71298ae](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/71298ae44a8dc99bd5cab9b9c6fbfc7701697fd2), [PR #13](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/13). | [PUML](dominio-v2.puml) y [SVG](dominio-v2.svg) conservados en su ruta; [glosario v2](historico/v2/glosario.md) preservado antes de actualizar el glosario vigente. |
+| v1 | [Issue #8](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/8), [commit aa93fa7](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/aa93fa78f59a17c95670d932ddb26ebf58cecece), [PR #9](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/9). | [PUML recuperado](../historico/v1/dominio-v1.puml), [SVG original](../historico/v1/dominio-v1.svg), [glosario original](../historico/v1/glosario.md). Copias exactas del commit de creación. |
+| v2 | [Issue #12](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/12), [commit 71298ae](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/71298ae44a8dc99bd5cab9b9c6fbfc7701697fd2), [PR #13](https://github.com/Raultascon/26-27-IdSw1-SDR/pull/13). | [PUML](../historico/v2/dominio-v2.puml) y [SVG](../historico/v2/dominio-v2.svg) conservados en el histórico de v2; [glosario v2](../historico/v2/glosario.md) preservado antes de actualizar el glosario vigente. |
 | v3 | [Discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14), [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16), rama `feat/issue-16-mejorar-modelo-dominio-v3`. | Propuesta de clases, dos vistas de objetos, actividad de envío y documentación. Los commits usan `refs #16`; el PR se dirige a `develop`, como los PR #9 y #13. Pendiente de revisión y validación. |
 
-El commit de v2 eliminó los archivos de v1. Recuperarlos en `historico/v1/` permite comparar sin reescribir el historial ni alterar la autoría original. Su contenido, incluidas agregaciones y composiciones antiguas, se conserva como evidencia histórica: **v3 no utiliza esas relaciones**. No se regeneran las imágenes antiguas ni se corrigen sus errores retrospectivamente.
+El commit de v2 eliminó los archivos de v1. Recuperarlos en `documentos/modelos/historico/v1/` permite comparar sin reescribir el historial ni alterar la autoría original. Su contenido, incluidas agregaciones y composiciones antiguas, se conserva como evidencia histórica: **v3 no utiliza esas relaciones**. No se regeneran las imágenes antiguas ni se corrigen sus errores retrospectivamente.
 
 El registro de IA anterior también se conserva. La nueva entrada se limita al uso de Codex para código PUML, revisión de posibles errores y propuestas de mejora.
 
@@ -22,10 +22,10 @@ El registro de IA anterior también se conserva. La nueva entrada se limita al u
 | --- | --- | --- |
 | v1 utiliza relaciones de parte–todo para acciones como entrar, consultar o responder y apenas expresa multiplicidades. | Mezcla el vocabulario del dominio con navegación y operaciones; dificulta verificar cardinalidades. | Asociaciones simples con nombres y multiplicidades justificadas. Las capacidades se documentan como reglas. |
 | v2 añade multiplicidades y vincula las valoraciones a los ítems. | Mejora la precisión respecto a v1; esa intención se conserva. | Se explicita además que los once ítems de una evaluación son distintos y pertenecen al cuestionario de su convocatoria. |
-| En v2 se puede recorrer Estudiante → EncuestaSemestral → EvaluacionDocente. | El contenido tiene un vínculo de autoría, contrario al anonimato recogido en la minuta. | Separación entre AsignacionEvaluacion y Evaluacion; se documentan las limitaciones de privacidad aún pendientes. |
+| En v2 se puede recorrer Estudiante → EncuestaSemestral → EvaluacionDocente. | El contenido tiene un vínculo de autoría, contrario al anonimato recogido en la minuta. | Separación conceptual entre AsignacionEvaluacion y Evaluacion. |
 | EstudianteOrdinario/Erasmus y ProfesorFijo/Temporal introducen cuatro subclases sin diferencias estructurales suficientes en sus evaluaciones. | Añaden complejidad e inducen a tratar las sustituciones como jerarquía de tipos. | Estudiante con condición Erasmus; Profesor único y varias Docencia para las imparticiones. |
 | Semestre organiza directamente Asignatura en v2. | Puede interpretarse que una materia del catálogo pertenece a un único semestre. | Semestre sitúa Docencia; Asignatura conserva su identidad independiente. |
-| ResumenDocente tiene grado, pero la evaluación no determina inequívocamente el grado de la docencia mediante sus asociaciones. | La procedencia de la agrupación de resultados queda insuficientemente expresada. | Grado forma parte del contexto de Docencia, con las reservas de S-01 y D-03. |
+| ResumenDocente tiene grado, pero la evaluación no determina inequívocamente el grado de la docencia mediante sus asociaciones. | La procedencia de la agrupación de resultados queda insuficientemente expresada. | Grado forma parte del contexto de Docencia, según S-01. |
 | Los resúmenes, medias, comentario, pregunta abierta y calendario aparecen como numerosas clases. | Mezcla información derivada con contenido básico y amplía el diagrama sin aportar siempre identidad propia. | Resultados derivados; observaciones y fechas como atributos. Se conserva su significado en reglas y glosario. |
 | La escala añade etiquetas de acuerdo/desacuerdo no especificadas; el glosario presenta la semana 10 como fija. | Convierte interpretaciones en requisitos. | Valores 1..5 sin etiquetas añadidas y fechas configurables. Fórmulas y ambigüedades se marcan como propuestas. |
 | No había escenarios de objetos ni vista dinámica del envío. | Era difícil contrastar los casos de sustitución y abandono con la estructura. | E-01, E-02 y actividad de envío individual, con comprobaciones de consistencia. |
@@ -50,15 +50,15 @@ El ejemplo de Martín es útil como organización, pero no es una plantilla sem�
 | Elemento observado en las referencias | Situación tras esta propuesta |
 | --- | --- |
 | Glosario consistente con las clases. | Actualizado para los doce conceptos, los términos derivados y los nombres propuestos. |
-| Multiplicidades explicadas y decisiones visibles. | Documentadas en v3, separando reglas, propuestas y dudas. |
+| Multiplicidades explicadas y decisiones visibles. | Documentadas en v3, separando reglas y decisiones propuestas. |
 | Dos escenarios de objetos y vista dinámica. | Añadidos con datos ficticios y omisiones gráficas expresas. Se elige actividad porque explica mejor el abandono y el envío que un simple estado «pendiente/enviada». |
 | Evolución verificable y fuentes editables. | v1 recuperada, v2 conservada y v3 acompañada de PUML/SVG. |
 | Validación explícita del cliente. | Sigue pendiente. La aprobación interna para trabajar en el issue #16 no equivale a validar el modelo. |
 | Encontrar, priorizar, detallar y prototipar casos de uso. | Trabajo posterior; la identificación ya está en #15. No es un defecto que este PR de dominio no los implemente. |
-| Navegación, índices generales y presentación del repositorio. | Fuera del encargo actual; no se modifica el README ni se añaden README de índices. |
+| Navegación, índices generales y presentación del repositorio. | El [README del modelo](../README.md) contiene la guía de lectura del modelo. El README general del repositorio conserva su contenido original. |
 
 La rúbrica histórica valora agregación/composición y menciona cantidades de atributos, pero no se introducen ahora: el alcance pedido es trabajar sin esas relaciones y evitar atributos inventados. La adecuación a la evaluación de este curso deberá contrastarse con el profesor cuando corresponda.
 
 ---
 
-[Índice provisional](indice-provisional.md) · [← Reglas y dudas](trazabilidad-v3.md) · [Uso de IA →](AI-uso.md) · [Volver arriba](#evolución-del-modelo-del-dominio)
+[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](AI-uso.md) · [Volver arriba](#evolución-del-modelo-del-dominio)

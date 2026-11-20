@@ -1,6 +1,6 @@
 # Declaración de Uso de IA
 
-[Índice provisional](indice-provisional.md) · [← Evolución](evolucion.md)
+[Índice del modelo](../README.md) · [← Evolución](evolucion.md)
 
 ## Herramientas Utilizadas
 - **Herramientas:** Google Gemini
@@ -33,4 +33,4 @@
 
 ---
 
-[Índice provisional](indice-provisional.md) · [← Evolución](evolucion.md) · [Volver arriba](#declaración-de-uso-de-ia)
+[Índice del modelo](../README.md) · [← Evolución](evolucion.md) · [Volver arriba](#declaración-de-uso-de-ia)
