@@ -1,5 +1,7 @@
 # Escenarios y comprobación del modelo · v3
 
+[Índice provisional](indice-provisional.md) · [← Glosario](glosario.md) · [Reglas y dudas →](trazabilidad-v3.md)
+
 Complemento del [modelo conceptual](dominio-v3.md) y sus [reglas](trazabilidad-v3.md). Los nombres, valores y fechas son **datos ficticios**, no hechos obtenidos del cliente. Cada diagrama es una vista parcial de un mismo tipo de estructura: omitir un objeto para facilitar la lectura no elimina las multiplicidades del modelo.
 
 ## E-01 · Dos asignaturas, sustitución y abandono
@@ -68,3 +70,7 @@ java -jar /ruta/a/plantuml.jar -charset UTF-8 -tsvg -o ../../imagenes/v3 documen
 ```
 
 La ruta de salida es relativa a las fuentes. Se usa SVG para poder ampliar sin perder legibilidad, como recomienda el README del repositorio; no hace falta generar PNG adicionales. El PR registra la versión utilizada y las comprobaciones realizadas. La revisión de estos artefactos no sustituye la aprobación del cliente.
+
+---
+
+[Índice provisional](indice-provisional.md) · [← Glosario](glosario.md) · [Reglas y dudas →](trazabilidad-v3.md) · [Volver arriba](#escenarios-y-comprobación-del-modelo--v3)

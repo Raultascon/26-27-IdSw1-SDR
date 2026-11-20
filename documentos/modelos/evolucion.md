@@ -1,5 +1,7 @@
 # Evolución del modelo del dominio
 
+[Índice provisional](indice-provisional.md) · [← Reglas y dudas](trazabilidad-v3.md) · [Uso de IA →](AI-uso.md)
+
 La propuesta actual está documentada en [dominio-v3.md](dominio-v3.md). Este documento conserva la procedencia de las versiones y explica sus cambios; no convierte los modelos antiguos en modelos vigentes.
 
 ## Versiones y evidencia
@@ -56,3 +58,7 @@ El ejemplo de Martín es útil como organización, pero no es una plantilla sem�
 | Navegación, índices generales y presentación del repositorio. | Fuera del encargo actual; no se modifica el README ni se añaden README de índices. |
 
 La rúbrica histórica valora agregación/composición y menciona cantidades de atributos, pero no se introducen ahora: el alcance pedido es trabajar sin esas relaciones y evitar atributos inventados. La adecuación a la evaluación de este curso deberá contrastarse con el profesor cuando corresponda.
+
+---
+
+[Índice provisional](indice-provisional.md) · [← Reglas y dudas](trazabilidad-v3.md) · [Uso de IA →](AI-uso.md) · [Volver arriba](#evolución-del-modelo-del-dominio)

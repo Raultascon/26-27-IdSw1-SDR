@@ -1,5 +1,7 @@
 # Modelo del dominio · v3
 
+[Índice provisional](indice-provisional.md) · [Glosario →](glosario.md)
+
 Propuesta del 20/11/2026, basada en la única reunión celebrada: [sesión 01, 26/10/2026](../sesiones/sesion01.md). Trabajo del [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16), acordado en la [discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14). **Pendiente de revisión del equipo y validación del cliente.**
 
 ## Alcance y lectura
@@ -81,3 +83,7 @@ El cierre de convocatoria es independiente del final de esta actividad. Los resu
 El administrador único, las notificaciones por campus y correo, las exportaciones PDF/Excel y la integración simulada con Panal/campus se conservan como reglas o capacidades en la trazabilidad. No se pierde el requisito por no dibujar una clase para cada acción o pantalla. Los actores y casos de uso corresponden al [issue #15](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/15).
 
 La propuesta queda preparada para revisión con dos escenarios, fuentes editables, imágenes y reglas verificables. No se declara validación del cliente ni se resuelven por suposición las preguntas abiertas de la minuta.
+
+---
+
+[Índice provisional](indice-provisional.md) · [Glosario →](glosario.md) · [Volver arriba](#modelo-del-dominio--v3)

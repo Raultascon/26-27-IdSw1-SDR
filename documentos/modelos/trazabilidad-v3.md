@@ -1,5 +1,7 @@
 # Reglas y trazabilidad · v3
 
+[Índice provisional](indice-provisional.md) · [← Escenarios](escenarios-v3.md) · [Evolución →](evolucion.md)
+
 Origen funcional: [minuta de la sesión 01 (26/10/2026)](../sesiones/sesion01.md), en su [revisión 3e37c8f](https://github.com/Raultascon/26-27-IdSw1-SDR/blob/3e37c8f/documentos/sesiones/sesion01.md). Propuesta vinculada al [issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16) y a la [discussion #14](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/14).
 
 **RN** identifica una regla recogida en la minuta; no equivale a una aprobación posterior del modelo. **S** identifica una decisión propuesta para representarla. **D** identifica una duda para el cliente. Los [escenarios E-01 y E-02 y las comprobaciones C-01 a C-08](escenarios-v3.md) permiten revisar la propuesta.
@@ -53,3 +55,7 @@ Estas preguntas quedan preparadas para revisión del equipo y conversación con 
 | D-06 | ¿Una semana de plazo es una duración obligatoria o habitual? ¿Qué hora y límites exactos tienen apertura y cierre? | Se modelan fechas configurables; no se fija la semana 10 ni una hora de corte por suposición. |
 
 Resolver estas dudas exige nueva evidencia del cliente. Una nueva iteración debe enlazar la respuesta correspondiente y revisar los elementos afectados; no basta con cambiar «pendiente» por «validado».
+
+---
+
+[Índice provisional](indice-provisional.md) · [← Escenarios](escenarios-v3.md) · [Evolución →](evolucion.md) · [Volver arriba](#reglas-y-trazabilidad--v3)

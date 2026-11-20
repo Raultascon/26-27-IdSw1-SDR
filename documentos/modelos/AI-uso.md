@@ -1,5 +1,7 @@
 # Declaración de Uso de IA
 
+[Índice provisional](indice-provisional.md) · [← Evolución](evolucion.md)
+
 ## Herramientas Utilizadas
 - **Herramientas:** Google Gemini
 - **Fechas:** Noviembre 2026
@@ -28,3 +30,7 @@
 
 - **Herramienta:** Codex.
 - **Uso:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio.
+
+---
+
+[Índice provisional](indice-provisional.md) · [← Evolución](evolucion.md) · [Volver arriba](#declaración-de-uso-de-ia)

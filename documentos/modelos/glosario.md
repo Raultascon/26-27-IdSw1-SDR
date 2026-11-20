@@ -1,5 +1,7 @@
 # Glosario del modelo del dominio · v3
 
+[Índice provisional](indice-provisional.md) · [← Modelo](dominio-v3.md) · [Escenarios →](escenarios-v3.md)
+
 Vocabulario de la [propuesta v3](dominio-v3.md), basado en la [sesión 01](../sesiones/sesion01.md). Las denominaciones nuevas que ayudan a precisar el modelo se identifican como propuestas; aún no han sido validadas por el cliente.
 
 ## Conceptos del diagrama
@@ -32,3 +34,7 @@ Vocabulario de la [propuesta v3](dominio-v3.md), basado en la [sesión 01](../se
 | **Profesor evaluador** | Expresión de la minuta pendiente de aclarar: no se presupone que el profesor deba responder las encuestas (D-01). |
 
 Los glosarios anteriores se conservan en [v1](historico/v1/glosario.md) y [v2](historico/v2/glosario.md); no son definiciones vigentes de v3.
+
+---
+
+[Índice provisional](indice-provisional.md) · [← Modelo](dominio-v3.md) · [Escenarios →](escenarios-v3.md) · [Volver arriba](#glosario-del-modelo-del-dominio--v3)
