@@ -22,7 +22,11 @@ La lectura sigue tres grupos de color: contexto académico (azul), participació
 
 **AsignacionEvaluacion** expresa que un estudiante tiene pendiente o ya ha enviado la evaluación de una docencia. Permite razonar sobre personalización, recordatorios y ausencia de reenvío. **Evaluacion** recoge exclusivamente el contenido anónimo aceptado. No hay asociación entre ambas ni entre Evaluacion y Estudiante. Docencia y Convocatoria son contextos compartidos: sus asociaciones permiten conocer a los posibles participantes, pero no identifican al autor de una respuesta concreta.
 
-El modelo describe la separación conceptual entre participación y contenido. No se diseñan identificadores, sesiones, credenciales ni almacenamiento en esta propuesta.
+El cuestionario de una asignación se determina mediante el recorrido **AsignacionEvaluacion → Docencia → Semestre → Convocatoria → Cuestionario**. Como hay una sola convocatoria por semestre y un cuestionario por convocatoria, no hace falta una asociación directa adicional con Cuestionario. Las asignaciones se crean al preparar la convocatoria: no pueden existir para un semestre que todavía carezca de ella ([S-02](trazabilidad-v3.md#s-02 "Decisión propuesta 02")). Una Evaluacion obtiene su cuestionario mediante **Evaluacion → Convocatoria → Cuestionario**.
+
+Vincular una asignación con una Evaluacion concreta permitiría recorrer **Estudiante → AsignacionEvaluacion → Evaluacion** e identificar qué respuestas envió ese estudiante. Por eso el envío cambia el estado de la asignación y conserva el contenido anónimo sin mantener ese vínculo ([RN-03](trazabilidad-v3.md#rn-03 "Regla de negocio 03")). Vincularla con la plantilla común no identificaría las respuestas, pero repetiría información ya determinada por el recorrido anterior.
+
+El modelo describe la separación conceptual entre participación y contenido; esta separación por sí sola no garantiza el anonimato frente a inferencias ([C-05](escenarios-v3.md#c-05 "Comprobación 05")). No se diseñan identificadores, sesiones, credenciales ni almacenamiento en esta propuesta.
 
 ## Asociaciones y multiplicidades
 

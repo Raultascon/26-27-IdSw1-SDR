@@ -36,7 +36,7 @@ Además de las multiplicidades, deben cumplirse estas restricciones:
 
 1. `fechaApertura < fechaCierre`; solo se acepta el envío dentro del plazo y con asignación pendiente.
 2. La docencia de una evaluación y su convocatoria corresponden al mismo semestre, tanto en periodo como en año académico ([C-09](escenarios-v3.md#c-09 "Comprobación 09")).
-3. Una asignación solo puede referirse a una docencia recibida por su estudiante; `esErasmus = verdadero` impide asignarla. La unicidad estudiante–docencia evita duplicar oportunidades dentro del semestre.
+3. Una asignación solo puede referirse a una docencia recibida por su estudiante; `esErasmus = verdadero` impide asignarla. La unicidad estudiante–docencia evita duplicar oportunidades dentro del semestre. Para que exista una asignación, el semestre de su docencia debe tener una convocatoria preparada; su cuestionario es el de esa convocatoria ([S-02](#s-02 "Decisión propuesta 02"), [S-03](#s-03 "Decisión propuesta 03")).
 4. Cada evaluación contiene exactamente once puntuaciones, una por cada ítem distinto de su cuestionario, con enteros de 1 a 5. Tener once valores del mismo ítem no es válido.
 5. La ausencia de observaciones es válida. El envío aceptado no crea una relación con la asignación, ni guarda nombre o identificador del estudiante en las respuestas.
 6. La ausencia de respuestas no elimina la convocatoria ni obliga a crear evaluaciones vacías. Tampoco se borran las respuestas completas de otras docencias al abandonar.

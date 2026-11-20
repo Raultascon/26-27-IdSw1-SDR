@@ -3,7 +3,7 @@
 [Índice del modelo](../README.md) · [← Evolución](evolucion.md)
 
 ## Herramientas Utilizadas
-- **Herramientas:** Google Gemini
+- **Herramientas:** Google Gemini (v1) y Codex (v3).
 - **Fechas:** Noviembre 2026
 
 ## Contexto de Uso por Artefacto
@@ -29,7 +29,7 @@
 ## Modelo del dominio (v3) · 20/11/2026
 
 - **Herramienta:** Codex.
-- **Uso:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio.
+- **Uso:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio; ayudar a redactar los archivos Markdown, revisar la documentación y añadir enlaces y vínculos entre documentos y referencias.
 
 ---
 
