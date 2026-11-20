@@ -4,6 +4,8 @@
 
 Complemento del [modelo conceptual](dominio-v3.md) y sus [reglas](trazabilidad-v3.md). Los nombres, valores y fechas son **datos ficticios**, no hechos obtenidos del cliente. Cada diagrama es una vista parcial de un mismo tipo de estructura: omitir un objeto para facilitar la lectura no elimina las multiplicidades del modelo.
 
+<a id="e-01"></a>
+
 ## E-01 · Dos asignaturas, sustitución y abandono
 
 ![Objetos del escenario de participación](../diagramas/objetos/objetos-01.svg)
@@ -20,7 +22,9 @@ Tiene tres asignaciones distintas. Tras enviar la de Ana–Programación y aband
 
 La evaluación ya aceptada se conserva, pero no se dibuja una respuesta concreta como propiedad de esta estudiante. La vista de participación solo acredita el estado de envío. Mientras la convocatoria esté abierta quedan pendientes y continúa el aviso del campus; cerrada la convocatoria, cesa aunque no se hayan respondido.
 
-Este escenario cubre RN-01, RN-02, RN-05, RN-06 y RN-09. Si Ana volviera a impartir la misma asignatura durante ese semestre, S-01 propone mantener una sola docencia para la misma combinación.
+Este escenario cubre [RN-01](trazabilidad-v3.md#rn-01 "Regla de negocio 01"), [RN-02](trazabilidad-v3.md#rn-02 "Regla de negocio 02"), [RN-05](trazabilidad-v3.md#rn-05 "Regla de negocio 05"), [RN-06](trazabilidad-v3.md#rn-06 "Regla de negocio 06") y [RN-09](trazabilidad-v3.md#rn-09 "Regla de negocio 09"). Si Ana volviera a impartir la misma asignatura durante ese semestre, [S-01](trazabilidad-v3.md#s-01 "Decisión propuesta 01") propone mantener una sola docencia para la misma combinación.
+
+<a id="e-02"></a>
 
 ## E-02 · Contenido anónimo y separación por grado
 
@@ -39,11 +43,11 @@ El cuestionario es el de la sesión 01; sus enunciados se toman literalmente de 
 | respuestaInf | 4, 5, 4, 4, 5, 4, 4, 5, 4, 4, 5 | Ejemplos útiles (ficticio). |
 | respuestaAde | 2, 3, 3, 2, 3, 3, 2, 3, 3, 2, 3 | Ausentes. |
 
-Ambas evaluaciones satisfacen RN-04: once valores válidos y un comentario opcional. Las dos comparten Cuestionario y sus ítems, pero no Docencia. El Semestre compartido se omite en el dibujo y debe ser el mismo para docencias y convocatoria.
+Ambas evaluaciones satisfacen [RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04"): once valores válidos y un comentario opcional. Las dos comparten Cuestionario y sus ítems, pero no Docencia. El Semestre compartido se omite en el dibujo y debe ser el mismo para docencias y convocatoria.
 
-**Comprobación aritmética aislada:** si cada fila fuera la única respuesta de su grupo, Informática tendría `N = 1`, medias por ítem iguales a su fila y media global `48/11 ≈ 4,36`; ADE tendría `N = 1` y media global `29/11 ≈ 2,64`. No se calcula una media conjunta de ambos grados. Es un ejemplo de la fórmula S-04.
+**Comprobación aritmética aislada:** si cada fila fuera la única respuesta de su grupo, Informática tendría `N = 1`, medias por ítem iguales a su fila y media global `48/11 ≈ 4,36`; ADE tendría `N = 1` y media global `29/11 ≈ 2,64`. No se calcula una media conjunta de ambos grados. Es un ejemplo de la fórmula [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04").
 
-Este escenario cubre RN-03, RN-04 y RN-07. La ausencia de observaciones de ADE es válida; una ausencia de puntuación obligatoria no lo sería.
+Este escenario cubre [RN-03](trazabilidad-v3.md#rn-03 "Regla de negocio 03"), [RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04") y [RN-07](trazabilidad-v3.md#rn-07 "Regla de negocio 07"). La ausencia de observaciones de ADE es válida; una ausencia de puntuación obligatoria no lo sería.
 
 ## Comprobaciones de consistencia
 
@@ -51,14 +55,14 @@ Son criterios de revisión del modelo, no pruebas de una aplicación implementad
 
 | ID | Situación | Resultado esperado y regla |
 | --- | --- | --- |
-| C-01 | Estudiante Erasmus que recibe una docencia. | Puede figurar en el contexto académico, pero no recibe AsignacionEvaluacion ni invitación (RN-01). |
-| C-02 | Intentar enviar 10 valores, un 0, un 6 o un valor no entero. Repetir un ítem aunque haya 11 puntuaciones. | No existe una Evaluacion aceptada válida hasta que haya 11 ítems distintos del cuestionario con valores enteros de 1 a 5 (RN-04). |
-| C-03 | Completar una evaluación y abandonar otra con cinco respuestas. | Permanece la primera; no se conserva la segunda. La asignación de la segunda sigue pendiente, sin borrador persistido (RN-05). |
-| C-04 | Reenviar o modificar una asignación enviada. | No se acepta; no se duplica el contenido conservado ni vuelve a pendiente (RN-06, S-02). |
-| C-05 | Buscar el autor de una respuesta recorriendo asociaciones. | No existe vínculo de autoría hacia Estudiante ni AsignacionEvaluacion. El contexto académico identifica un conjunto de posibles participantes; no garantiza por sí solo anonimato frente a inferencias (RN-03). |
-| C-06 | Mismo profesor en dos asignaturas o grados; convocatoria sin respuestas. | Se mantienen agrupaciones diferentes. Con `N = 0`, la propuesta no divide por cero ni muestra una media cero (RN-07, S-04). |
-| C-07 | Envío tras el cierre; estudiante con pendientes al vencer el plazo. | No se admite otro envío ni siguen los avisos. Los resultados finales se hacen disponibles al administrador y profesores al cierre, sin esperar participación completa (RN-08 a RN-10). |
-| C-08 | Modificar el cuestionario de una convocatoria abierta o usar un ítem de otra plantilla. | Incompatible con la plantilla fija y con la restricción de correspondencia entre evaluación, convocatoria y sus once ítems (RN-04). |
+| <a id="c-01"></a>C-01 | Estudiante Erasmus que recibe una docencia. | Puede figurar en el contexto académico, pero no recibe AsignacionEvaluacion ni invitación ([RN-01](trazabilidad-v3.md#rn-01 "Regla de negocio 01")). |
+| <a id="c-02"></a>C-02 | Intentar enviar 10 valores, un 0, un 6 o un valor no entero. Repetir un ítem aunque haya 11 puntuaciones. | No existe una Evaluacion aceptada válida hasta que haya 11 ítems distintos del cuestionario con valores enteros de 1 a 5 ([RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04")). |
+| <a id="c-03"></a>C-03 | Completar una evaluación y abandonar otra con cinco respuestas. | Permanece la primera; no se conserva la segunda. La asignación de la segunda sigue pendiente, sin borrador persistido ([RN-05](trazabilidad-v3.md#rn-05 "Regla de negocio 05")). |
+| <a id="c-04"></a>C-04 | Reenviar o modificar una asignación enviada. | No se acepta; no se duplica el contenido conservado ni vuelve a pendiente ([RN-06](trazabilidad-v3.md#rn-06 "Regla de negocio 06"), [S-02](trazabilidad-v3.md#s-02 "Decisión propuesta 02")). |
+| <a id="c-05"></a>C-05 | Buscar el autor de una respuesta recorriendo asociaciones. | No existe vínculo de autoría hacia Estudiante ni AsignacionEvaluacion. El contexto académico identifica un conjunto de posibles participantes; no garantiza por sí solo anonimato frente a inferencias ([RN-03](trazabilidad-v3.md#rn-03 "Regla de negocio 03")). |
+| <a id="c-06"></a>C-06 | Mismo profesor en dos asignaturas o grados; convocatoria sin respuestas. | Se mantienen agrupaciones diferentes. Con `N = 0`, la propuesta no divide por cero ni muestra una media cero ([RN-07](trazabilidad-v3.md#rn-07 "Regla de negocio 07"), [S-04](trazabilidad-v3.md#s-04 "Decisión propuesta 04")). |
+| <a id="c-07"></a>C-07 | Envío tras el cierre; estudiante con pendientes al vencer el plazo. | No se admite otro envío ni siguen los avisos. Los resultados finales se hacen disponibles al administrador y profesores al cierre, sin esperar participación completa ([RN-08](trazabilidad-v3.md#rn-08 "Regla de negocio 08") a [RN-10](trazabilidad-v3.md#rn-10 "Regla de negocio 10")). |
+| <a id="c-08"></a>C-08 | Modificar el cuestionario de una convocatoria abierta o usar un ítem de otra plantilla. | Incompatible con la plantilla fija y con la restricción de correspondencia entre evaluación, convocatoria y sus once ítems ([RN-04](trazabilidad-v3.md#rn-04 "Regla de negocio 04")). |
 
 
 

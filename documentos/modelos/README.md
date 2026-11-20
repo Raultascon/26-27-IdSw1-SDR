@@ -53,10 +53,10 @@ El número identifica una entrada concreta; no indica importancia ni orden de ej
 
 | Prefijo | Significado | Dónde se define |
 | --- | --- | --- |
-| **RN-01, RN-02…** | Regla de negocio recogida en la minuta. | [Reglas del negocio](documentacion/trazabilidad-v3.md#reglas-del-negocio). |
-| **S-01, S-02…** | Decisión o supuesto propuesto para representar el dominio; no equivale a un requisito confirmado. | [Decisiones propuestas](documentacion/trazabilidad-v3.md#decisiones-propuestas-y-restricciones-de-consistencia). |
-| **E-01, E-02** | Escenario de ejemplo con datos ficticios. | [Escenarios](documentacion/escenarios-v3.md). |
-| **C-01, C-02…** | Comprobación de consistencia del modelo. | [Comprobaciones](documentacion/escenarios-v3.md#comprobaciones-de-consistencia). |
+| **[RN-01](documentacion/trazabilidad-v3.md#rn-01 "Regla de negocio 01"), [RN-02](documentacion/trazabilidad-v3.md#rn-02 "Regla de negocio 02")…** | Regla de negocio recogida en la minuta. | [Reglas del negocio](documentacion/trazabilidad-v3.md#reglas-del-negocio). |
+| **[S-01](documentacion/trazabilidad-v3.md#s-01 "Decisión propuesta 01"), [S-02](documentacion/trazabilidad-v3.md#s-02 "Decisión propuesta 02")…** | Decisión o supuesto propuesto para representar el dominio; no equivale a un requisito confirmado. | [Decisiones propuestas](documentacion/trazabilidad-v3.md#decisiones-propuestas-y-restricciones-de-consistencia). |
+| **[E-01](documentacion/escenarios-v3.md#e-01 "Escenario 01"), [E-02](documentacion/escenarios-v3.md#e-02 "Escenario 02")** | Escenario de ejemplo con datos ficticios. | [Escenarios](documentacion/escenarios-v3.md). |
+| **[C-01](documentacion/escenarios-v3.md#c-01 "Comprobación 01"), [C-02](documentacion/escenarios-v3.md#c-02 "Comprobación 02")…** | Comprobación de consistencia del modelo. | [Comprobaciones](documentacion/escenarios-v3.md#comprobaciones-de-consistencia). |
 
 Los documentos de v3 tienen enlaces de navegación al principio y al final. Los históricos se consultan desde Evolución y conservan su contenido original.
 

@@ -12,9 +12,9 @@ Vocabulario de la [propuesta v3](dominio-v3.md), basado en la [sesión 01](../..
 | **Profesor** | Docente que ha impartido una asignatura y cuya actividad se evalúa. El fijo y quien lo sustituye se representan con el mismo concepto, mediante docencias diferentes. | Sesión 01 §2. |
 | **Asignatura** | Materia académica. Su nombre no la vincula a un curso o semestre concreto; cada impartición se sitúa mediante Docencia. | Sesión 01 §2. |
 | **Grado** | Titulación o carrera por la que deben separarse los resultados. Son sinónimos en esta propuesta. | Sesión 01 §3 y §5. |
-| **Semestre** | Periodo académico, identificado conceptualmente por `periodo` y `añoAcademico`, en el que se sitúan las docencias y la convocatoria. | Sesión 01 §4; S-01. |
-| **Docencia** | Contexto de un profesor que imparte una asignatura para un grado en un semestre. No es una clase lectiva ni el vínculo laboral del profesor. Permite evaluar por separado varias asignaturas, varios profesores y sustituciones. | Término propuesto a partir de §2 y §5; S-01. |
-| **AsignacionEvaluacion** | Oportunidad de evaluar una docencia que corresponde a un estudiante elegible. `estadoEnvio` es `pendiente` o `enviada`. No guarda puntuaciones, comentarios ni referencia a una Evaluacion. La convocatoria se obtiene del semestre de la docencia. | Término propuesto a partir de §1, §3 y §4; S-02. |
+| **Semestre** | Periodo académico, identificado conceptualmente por `periodo` y `añoAcademico`, en el que se sitúan las docencias y la convocatoria. | Sesión 01 §4; [S-01](trazabilidad-v3.md#s-01 "Decisión propuesta 01"). |
+| **Docencia** | Contexto de un profesor que imparte una asignatura para un grado en un semestre. No es una clase lectiva ni el vínculo laboral del profesor. Permite evaluar por separado varias asignaturas, varios profesores y sustituciones. | Término propuesto a partir de §2 y §5; [S-01](trazabilidad-v3.md#s-01 "Decisión propuesta 01"). |
+| **AsignacionEvaluacion** | Oportunidad de evaluar una docencia que corresponde a un estudiante elegible. `estadoEnvio` es `pendiente` o `enviada`. No guarda puntuaciones, comentarios ni referencia a una Evaluacion. La convocatoria se obtiene del semestre de la docencia. | Término propuesto a partir de §1, §3 y §4; [S-02](trazabilidad-v3.md#s-02 "Decisión propuesta 02"). |
 | **Convocatoria** | Campaña común de encuestas de un semestre. Sus fechas exactas de apertura y cierre las establece el administrador. No es la encuesta individual de un alumno. | Sesión 01 §4. |
 | **Cuestionario** | Plantilla común fijada antes del lanzamiento: 11 ítems numéricos y un enunciado de observaciones. La obligatoriedad de sus preguntas no convierte la participación en obligatoria. | Sesión 01 §2–3. |
 | **Item** | Pregunta numérica del cuestionario, con número de 1 a 11 y enunciado tomado de la minuta. Cada ítem debe contestarse para enviar una evaluación. | Sesión 01 §3, tabla de ítems. |
@@ -26,7 +26,7 @@ Vocabulario de la [propuesta v3](dominio-v3.md), basado en la [sesión 01](../..
 | Término | Significado y representación |
 | --- | --- |
 | **Encuesta** | Palabra ambigua de la minuta: se distingue entre convocatoria común, cuestionario y evaluación individual. El conjunto personalizado de pendientes se expresa mediante asignaciones. |
-| **Administrador** | Único responsable de fijar fechas y consultar todas las respuestas. David desempeña este papel según la minuta. Es un rol del negocio documentado en RN-11. |
+| **Administrador** | Único responsable de fijar fechas y consultar todas las respuestas. David desempeña este papel según la minuta. Es un rol del negocio documentado en [RN-11](trazabilidad-v3.md#rn-11 "Regla de negocio 11"). |
 | **Observaciones** | Pregunta abierta opcional y su posible respuesta. Se representan como atributos del cuestionario y de la evaluación. |
 | **Resultados** | Número de evaluaciones, once medias, media global y comentarios, derivados de las respuestas en su contexto académico. No identifican al autor. |
 | **Notificación / recordatorio** | Aviso por campus y correo; el aviso recurrente del campus cesa al completar las evaluaciones asignadas o al cerrar el plazo. No se ha acordado una frecuencia exacta. |
