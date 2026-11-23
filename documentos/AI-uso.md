@@ -6,7 +6,7 @@
 
 ## Contexto de Uso por Artefacto
 
-### Actores y Casos de Uso · v1 y v2 (Issue #15)
+### Actores y Casos de Uso · v1 y v2 ([Issue #15](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/15))
 - **¿Se usó?:** Sí
 - **Propósito:** Estructurar la documentación funcional (`documentos/casos-uso/documentacion/actores-casos-uso.md`) trazada al Modelo del dominio v3 y a la minuta de la sesión 01, generar el código fuente PlantUML para las iteraciones `v1` (`actoresCasosUso.puml`) y `v2` (`actoresCasosUso-v2.puml`), y redactar la guía de lectura (`documentos/casos-uso/README.md`).
 - **Evaluación crítica:**
