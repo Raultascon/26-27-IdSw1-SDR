@@ -1,6 +1,6 @@
 # Encuestas de Evaluación Docente - Actores y casos de uso
 
-[Índice de casos de uso](../README.md) · [Modelo del dominio v3](../../modelos/documentacion/dominio-v3.md) · [Minuta sesión 01](../../sesiones/sesion01.md)
+[Modelo del dominio v3](../../modelos/documentacion/dominio-v3.md) · [Minuta sesión 01](../../sesiones/sesion01.md)
 
 ## Información del artefacto
 
