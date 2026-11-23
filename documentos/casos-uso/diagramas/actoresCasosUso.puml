@@ -1,0 +1,44 @@
+@startuml actoresCasosUso
+left to right direction
+
+actor "Gestor (ordenación académica)" as Gestor
+actor "Alumno" as Alumno
+actor "Tiempo" as Tiempo
+
+rectangle "Sistema de Encuestas de Evaluación Docente" {
+  usecase configurarCuestionario as "configurarCuestionario()"
+  usecase prepararConvocatoria as "prepararConvocatoria()"
+  usecase consultarParticipacion as "consultarParticipacion()"
+  usecase consultarAsignaciones as "consultarAsignaciones()"
+  usecase responderEvaluacion as "responderEvaluacion()"
+  usecase abrirConvocatoria as "abrirConvocatoria()"
+  usecase enviarRecordatorios as "enviarRecordatorios()"
+  usecase cerrarConvocatoria as "cerrarConvocatoria()"
+  usecase consultarResultados as "consultarResultados()"
+  usecase exportarResultados as "exportarResultados()"
+}
+
+actor "Profesor" as Profesor
+actor "Director de grado" as DirectorGrado
+actor "Departamento de calidad" as Calidad
+
+Gestor --> configurarCuestionario
+Gestor --> prepararConvocatoria
+Gestor --> consultarParticipacion
+
+Alumno --> consultarAsignaciones
+Alumno --> responderEvaluacion
+
+Tiempo --> abrirConvocatoria
+Tiempo --> enviarRecordatorios
+Tiempo --> cerrarConvocatoria
+
+consultarResultados <-- Profesor
+exportarResultados <-- Profesor
+
+consultarResultados <-- DirectorGrado
+exportarResultados <-- DirectorGrado
+
+consultarResultados <-- Calidad
+exportarResultados <-- Calidad
+@enduml
