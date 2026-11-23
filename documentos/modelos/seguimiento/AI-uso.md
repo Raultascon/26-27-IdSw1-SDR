@@ -1,7 +1,9 @@
 # Declaración de Uso de IA
 
+[Índice del modelo](../README.md) · [← Evolución](evolucion.md)
+
 ## Herramientas Utilizadas
-- **Herramientas:** Google Gemini
+- **Herramientas:** Google Gemini (v1) y Codex (v3).
 - **Fechas:** Noviembre 2026
 
 ## Contexto de Uso por Artefacto
@@ -23,3 +25,12 @@
 
 - **Mecanismos de validación:** Se contrastó la estructura del diagrama generado en PlantUML contra los apuntes de la asignatura (verificando la ausencia de tipos de datos técnicos de programación o atributos propios de bases de datos) y contra los requerimientos establecidos en la toma de notas.
 - **Errores detectados:** Se corrigieron dependencias y asociaciones innecesarias sugeridas en el borrador inicial, conservando únicamente las clases conceptuales, enumerados y relaciones esenciales del dominio.
+
+## Modelo del dominio (v3) · 20/11/2026
+
+- **Herramienta:** Codex.
+- **Uso:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio; ayudar a redactar los archivos Markdown, revisar la documentación y añadir enlaces y vínculos entre documentos y referencias.
+
+---
+
+[Índice del modelo](../README.md) · [← Evolución](evolucion.md) · [Volver arriba](#declaración-de-uso-de-ia)

@@ -1,0 +1,89 @@
+@startuml
+title Modelo del dominio v3 · Encuestas de evaluación docente
+top to bottom direction
+skinparam style strictuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam classAttributeIconSize 0
+skinparam nodesep 85
+skinparam padding 4
+skinparam minClassWidth 120
+skinparam ranksep 60
+hide circle
+hide empty members
+
+  class Estudiante #EEF4FA {
+    esErasmus
+  }
+  class Profesor #EEF4FA {
+    nombre
+  }
+  class Asignatura #EEF4FA {
+    nombre
+  }
+  class Grado #EEF4FA {
+    nombre
+  }
+  class Semestre #EEF4FA {
+    periodo
+    añoAcademico
+  }
+  class Docencia #EEF4FA
+  Profesor "1" --right-- "0..*" Docencia : imparte
+  Asignatura "1" -- "0..*" Docencia : se concreta en
+  Grado "1" --left-- "0..*" Docencia : contextualiza
+  Semestre "1" -up- "0..*" Docencia : sitúa
+  Estudiante "0..*" -- "0..*" Docencia : recibe enseñanza
+
+  class AsignacionEvaluacion #FFF5E5 {
+    estadoEnvio
+  }
+  Estudiante "1" -- "0..*" AsignacionEvaluacion : tiene
+  Docencia "1" -- "0..*" AsignacionEvaluacion : es objeto de
+
+  class Convocatoria #EDF7F0 {
+    fechaApertura
+    fechaCierre
+  }
+  class Cuestionario #EDF7F0 {
+    enunciadoObservaciones
+  }
+  class Item #EDF7F0 {
+    numero
+    enunciado
+  }
+  class Evaluacion #EDF7F0 {
+    observaciones [0..1]
+  }
+  class Puntuacion #EDF7F0 {
+    valor
+  }
+  Convocatoria "0..*" -- "1" Cuestionario : utiliza
+  Cuestionario "1" -- "11" Item : plantea
+  Convocatoria "1" -- "0..*" Evaluacion : recibe
+  Evaluacion "1" -- "11" Puntuacion : recoge
+  Item "1" -- "0..*" Puntuacion : recibe respuesta en
+
+Semestre "1" -- "0..1" Convocatoria : tiene
+Docencia "1" -- "0..*" Evaluacion : es valorada en
+
+note bottom of AsignacionEvaluacion
+  estadoEnvio: pendiente o enviada.
+  Sin respuestas ni enlace a Evaluacion.
+  Una por estudiante y docencia elegibles.
+end note
+
+note bottom of Puntuacion
+  valor: entero entre 1 y 5.
+  Una puntuación por cada ítem del cuestionario.
+end note
+
+legend bottom
+  Asociaciones simples; multiplicidades en ambos extremos.
+  Azul: contexto académico · Ocre: participación · Verde: convocatoria y contenido.
+  Los colores ordenan la lectura, no representan módulos de software.
+  Propuesta de la sesión 01 · Reglas y supuestos en trazabilidad-v3.md.
+endlegend
+@enduml
