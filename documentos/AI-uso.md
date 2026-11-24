@@ -1,8 +1,8 @@
 ## Declaración de Uso de IA
 
 ## Herramientas Utilizadas
-- **Herramientas:** Google Gemini
-- **Fechas:** 2026-11-23
+- **Herramientas:** Google Gemini, Claude (Anthropic)
+- **Fechas:** 2026-11-23 a 2026-11-24
 
 ## Contexto de Uso por Artefacto
 
@@ -12,6 +12,13 @@
 - **Evaluación crítica:**
   - **Aceptado:** Modelado de los 6 actores externos fuera de la frontera del sistema (`Gestor (ordenación académica)`, `Alumno`, `Tiempo`, `Profesor`, `Director de grado` y `Departamento de calidad`), redacción de los casos de uso a nivel de negocio y refactorización en `v2` mediante herencia (`--|>`) desde `Profesor` hacia `Director de grado` y `Departamento de calidad`.
   - **Rechazado:** Propuestas intermedias con relaciones `<<include>>`, verbos de apertura de pantalla (`abrir...()`), división en múltiples diagramas funcionales por versión y enlaces superiores de navegación (`Índice`) innecesarios.
+
+### Refactor de actores y casos de uso · v3 ([Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22))
+- **¿Se usó?:** Sí
+- **Propósito:** Redactar la revisión del PR #19 publicada en Discussions, y aplicar los cambios acordados en el Issue #22 sobre `actores-casos-uso.md`, los diagramas PlantUML y la guía de lectura, con un commit por cambio.
+- **Evaluación crítica:**
+  - **Aceptado:** Actor abstracto `ConsultorResultados` en lugar de la herencia desde `Profesor`; herencia del `Gestor` desde ese rol (justificada por la sesión 01); Campus Virtual / Panal y Servidor de correo como actores secundarios; casos de uso de gestión de convocatoria y asignaciones (marcados como pendientes de validar); diagramas de contexto; glosario propio enlazado al del modelo del dominio; v1 y v2 conservadas en `historico/`.
+  - **Rechazado:** Mover los diagramas a una carpeta `modelosUML`. Aunque lo indica el README principal, el resto del repositorio usa `diagramas/` y cambiarlo solo en casos de uso rompía la coherencia. Se deja como decisión pendiente del grupo.
 
 ## Trazabilidad de Conversaciones
 
@@ -24,6 +31,19 @@
   - [`d6c9a0a`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/d6c9a0a) (`docs(cu): documenta actores y casos de uso a nivel de negocio [refs #15]`)
   - Commits posteriores de corrección (`fix(cu)`) y guía de lectura (`docs(cu)`) vinculados a `[refs #15]` en la rama `feat/issue-15-encontrar-actores-y-casos-de-uso`
 
+### Conversación 2: Revisión del PR #19 y refactor de actores y casos de uso (Issue #22)
+- **URL:** `https://claude.ai/code/session_01SfiCNLLgbq132FYQ84Y1eY`
+- **Fecha:** 2026-11-23 a 2026-11-24
+- **Resumen:** Revisión del PR #19 contrastada con la minuta de la sesión 01 y los apuntes de la asignatura, redacción del mensaje de Discussions y aplicación del refactor en la rama `refactor/issue-22-refactorizar-actores-y-casos-de-uso`.
+- **Commits asociados:**
+  - `1991bab` (`refactor(cu): unifica diagrama y añade actor abstracto ConsultorResultados [refs #22]`)
+  - `69b6980` (`fix(cu): asocia consulta y exportación de resultados al Gestor [refs #22]`)
+  - `dc9cd3d` (`feat(cu): añade Campus Virtual y Servidor de correo como actores secundarios [refs #22]`)
+  - `3e70391` (`feat(cu): añade casos de uso de gestión de convocatoria y asignaciones [refs #22]`)
+  - `65cf1f0` (`feat(cu): añade diagramas de contexto del Gestor y del Alumno [refs #22]`)
+  - `ec75850` (`docs(cu): añade glosario de actores y casos de uso [refs #22]`)
+  - `b81cfc5` (`docs(cu): registra la revisión v3 en la información del artefacto [refs #22]`)
+
 ## Validación Humana
 
 - **Mecanismos de validación:** Revisión crítica de cada propuesta generada por la IA contrastándola con los criterios explicados por el profesor en clase, la minuta de la sesión 01 (`sesion01.md`) y el Modelo del dominio v3 (`modelo-v3.md`), además de comprobar visualmente el renderizado de diagramas `.svg` y enlaces en GitHub.
@@ -31,3 +51,4 @@
   - **Abuso de `<<include>>` y mezcla de niveles de abstracción:** Al mostrarle un repositorio antiguo de ejemplo (`pySigHor`), la IA copió literalmente ese patrón introduciendo flechas `<<include>>` y casos de uso de navegación de interfaz (`abrirCuestionario()`, `abrirConvocatorias()`, `abrirAsignaciones()`). Se rechazó porque en clase se indicó evitar el uso excesivo de `<<include>>`/`<<extend>>` y mantener esta primera iteración estrictamente a nivel de negocio sin detalles técnicos ni de pantalla.
   - **Cruce innecesario de flechas en `v1`:** La propuesta inicial de la IA conectaba por separado a `Profesor`, `Director de grado` y `Departamento de calidad` con los casos de uso de consulta y exportación, generando 6 líneas cruzadas difíciles de leer. Se le indicó aplicar herencia (`--|>`) en una segunda iteración (`v2`) siguiendo las buenas prácticas vistas en clase.
   - **División errónea de diagramas y enlaces rotos:** La IA sugirió dividir una misma iteración en dos diagramas distintos (`001` y `002`) en lugar de mantener un único diagrama por iteración, e incluyó enlaces superiores al índice que no cargaban o sobraban en los archivos Markdown, por lo que se le ordenó eliminarlos.
+  - **Actores sin respaldo en la minuta (Issue #22):** Al contrastar el catálogo con la sesión 01 se detectó que `Director de grado` y `Departamento de calidad` no aparecen en ella; la minuta solo menciona al administrador y a los profesores como receptores de resultados. Se mantienen en `v3`, pero se propone confirmarlos con el cliente mediante un Issue `[Duda]`.
