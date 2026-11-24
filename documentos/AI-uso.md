@@ -17,7 +17,7 @@
 - **¿Se usó?:** Sí
 - **Propósito:** Redactar la revisión del PR #19 publicada en Discussions, y aplicar los cambios acordados en el Issue #22 sobre `actores-casos-uso.md`, los diagramas PlantUML y la guía de lectura, con un commit por cambio.
 - **Evaluación crítica:**
-  - **Aceptado:** Actor abstracto `ConsultorResultados` en lugar de la herencia desde `Profesor`; herencia del `Gestor` desde ese rol (justificada por la sesión 01); Campus Virtual / Panal como actor secundario; casos de uso de gestión de convocatoria y asignaciones (marcados como pendientes de validar); diagramas de contexto; glosario propio enlazado al del modelo del dominio; v1 y v2 conservadas en `historico/`.
+  - **Aceptado:** Actor abstracto `ConsultorResultados` en lugar de la herencia desde `Profesor`; herencia del `Gestor` desde ese rol (justificada por la sesión 01); Campus Virtual / Panal como actor secundario; casos de uso de gestión de convocatoria y asignaciones (marcados como pendientes de validar); diagramas de contexto; glosario propio enlazado al del modelo del dominio; v1 y v2 conservadas en `historico/` y el texto de la v2 conservado en el documento, con el refactor v3 en una sección propia.
   - **Rechazado:** Mover los diagramas a una carpeta `modelosUML`. Aunque lo indica el README principal, el resto del repositorio usa `diagramas/` y cambiarlo solo en casos de uso rompía la coherencia. Se deja como decisión pendiente del grupo.
   - **Rechazado:** Modelar el Servidor de correo como actor secundario. El equipo considera que el correo es solo un canal de notificación y no una entidad externa con interacción propia; se retiró en un commit posterior.
 
@@ -47,6 +47,7 @@
   - `b7fa992` (`refactor(cu): retira Servidor de correo como actor secundario [refs #22]`)
   - `ab412c1` (`feat(cu): exporta diagramas v3 y de contexto a SVG [refs #22]`)
   - `3b4257f` (`fix(cu): corrige enlace roto al modelo del dominio v3 [refs #22]`)
+  - `4880ae1` (`docs(cu): conserva la versión v2 y documenta el refactor v3 en sección propia [refs #22]`)
 
 ## Validación Humana
 
