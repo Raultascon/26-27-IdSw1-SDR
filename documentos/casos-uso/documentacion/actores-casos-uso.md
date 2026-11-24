@@ -12,7 +12,7 @@
 
 ## Introducción y criterios de modelado
 
-Este documento define los actores externos y el catálogo inicial de casos de uso del sistema a partir de los requisitos recogidos en la [sesión 01 (26/10/2026)](../../sesiones/sesion01.md) y las entidades del [Modelo del dominio v3](../../modelos/documentacion/modelo-v3.md).
+Este documento define los actores externos y el catálogo inicial de casos de uso del sistema a partir de los requisitos recogidos en la [sesión 01 (26/10/2026)](../../sesiones/sesion01.md) y las entidades del [Modelo del dominio v3](../../modelos/documentacion/dominio-v3.md).
 
 Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas:
 1. **Actores fuera de la frontera del sistema**: Todos los actores (humanos, organizativos o temporales) se sitúan fuera del límite del sistema, representando únicamente entidades externas que inician o participan en una interacción.
