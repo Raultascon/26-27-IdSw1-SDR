@@ -59,14 +59,6 @@ Estado documental tras la sesión 01 y la integración del refactor del issue #2
 | Detallado y criterios de aceptación | Pendientes para los casos priorizados | — |
 | Prototipado de casos de uso | Pendiente para validar los flujos | — |
 
-## Próximos pasos y referencias
-
-La referencia de [Jorgestor (2025–2026)](https://github.com/martinlopez7/25-26-IdSw1-SdR) incluye priorización, detallado y prototipos. Aquí quedan como trabajo posterior a la identificación inicial y a la aclaración de dudas con el cliente, siguiendo las actividades del [temario de requisitos](https://github.com/mmasias/idsw1/blob/main/temario/00003-disciplinaDeRequisitos.md).
-
-Antes de avanzar, conviene confirmar los roles de Director de grado y Departamento de calidad y las operaciones propuestas de modificación de convocatoria y asignaciones y de cancelación de convocatoria, señalados en el refactor v3. Los escenarios del dominio no sustituyen los criterios de aceptación de cada caso de uso.
-
-Los repositorios de [2025–2026](https://github.com/mmasias/25-26-IdSw1-SdR) y [2024–2025](https://github.com/mmasias/24-25-IdSw1-SdR) sirven de referencia de organización y seguimiento. La [rúbrica de 2025–2026](https://github.com/mmasias/25-26-IdSw1-SdR/blob/main/documents/l'Rubrica.md) valora la trazabilidad mediante issues, commits y referencias cruzadas, sin exigir documentos adicionales. Es una referencia histórica, no una rúbrica confirmada para este curso. El material vigente se consulta en el [repositorio de 2026–2027](https://github.com/mmasias/26-27-idsw1).
-
 ## Equipo
 
 | Integrante                | GitHub                                                         |
@@ -78,27 +70,6 @@ Los repositorios de [2025–2026](https://github.com/mmasias/25-26-IdSw1-SdR) y 
 | Diego Arellano            | [@DiegoArellano30](https://github.com/DiegoArellano30)         |
 | Héctor Ares Ibáñez        | [@hectorares3](https://github.com/hectorares3)                 |
 | Marcos González Hidalgo   | [@mglezz](https://github.com/mglezz)                           |
-
-## Estructura del repositorio
-
-```text
-.
-├── README.md
-└── documentos/
-    ├── AI-uso.md              Registro central de asistencia con IA
-    ├── CONVENCIONES.md        Acuerdos de trabajo del equipo
-    ├── recursos/             Identidad visual de los README
-    ├── sesiones/             Minuta y cuestionario de la sesión 01
-    ├── modelos/
-    │   ├── documentacion/    Dominio v3, glosario, escenarios y reglas
-    │   ├── diagramas/        Clases, objetos y actividad (PUML + SVG)
-    │   ├── historico/        Versiones v1 y v2
-    │   └── seguimiento/      Evolución y acceso al registro central de IA
-    └── casos-uso/
-        ├── documentacion/    Catálogo v2 y refactor v3
-        ├── diagramas/        Actores y contextos (PUML + SVG)
-        └── historico/        Versiones v1 y v2
-```
 
 ## Flujo de trabajo
 

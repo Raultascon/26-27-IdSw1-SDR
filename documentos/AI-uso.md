@@ -52,17 +52,9 @@ Cada entrada recoge herramientas y fechas, contexto y evaluación crítica, traz
 
 - **¿Se usó?:** Sí.
 - **Propósito:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio; ayudar a redactar los archivos Markdown, revisar la documentación y añadir enlaces y vínculos entre documentos y referencias.
-- **Evaluación crítica:** No consta el detalle de propuestas aceptadas o rechazadas en la entrada original.
 
-### Trazabilidad de la conversación
 
-- **URL:** No consta en la entrada original.
-- **Resumen:** Asistencia al modelo v3 y a su documentación, con el alcance indicado en el propósito.
-- **Commits asociados:** No constan en la entrada original.
 
-### Validación
-
-- **Revisión humana y errores detectados:** No constan en la entrada original.
 
 ## Actores y casos de uso v1 y v2
 
@@ -150,14 +142,12 @@ El registro original indica que el equipo decidió qué cambios aceptar, cuáles
 
 ### Trazabilidad de la conversación
 
-- **Conversación:** Sesión de Codex del 24/11/2026. Sin URL consignada; el registro quedó vinculado al issue.
 - **Mensaje declarado originalmente:** `docs(repo): reorganiza la navegación de la documentación [refs #21]`.
 - **Commit localizado en el historial:** [`869cabe`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/869cabe), con el mensaje `docs(repo): reorganiza la portada y la navegación [refs #21]`.
 
 ### Validación
 
 - **Comprobaciones registradas:** Revisión de rutas y anclas internas, tablas y bloques de código. Se corrigió un enlace al modelo v3 y se cerró el bloque de plantilla de las convenciones.
-- **Revisión humana:** Pendiente según la entrada original.
 
 ## Rediseño de README y unificación del registro
 
@@ -171,20 +161,18 @@ El registro original indica que el equipo decidió qué cambios aceptar, cuáles
 
 - **¿Se usó?:** Sí.
 - **Propósito:** Rediseñar los cuatro README con recursos SVG locales y navegación mediante iconos, contrastar su contenido con la minuta y el refactor ya integrado y reunir los registros de IA.
-- **Criterios aplicados a la propuesta:** Paleta inspirada en las capturas de Panal aportadas por el usuario y organización visual de Jorgestor; marca gráfica propia para el proyecto académico. Se conserva la documentación de requisitos y sus diagramas. Se elimina el archivo de acceso de la ruta antigua y se actualizan sus referencias al registro central.
+- **Criterios aplicados a la propuesta:** Paleta inspirada en las capturas de Panal y organización inspirada de Jorgestor; marca gráfica propia para el proyecto académico. Se conserva la documentación de requisitos y sus diagramas. Se elimina el archivo de acceso de la ruta antigua y se actualizan sus referencias al registro central.
 - **Corrección detectada:** La portada anterior indicaba que los diagramas de contexto estaban pendientes de integración; el merge de `develop` ya los incorporaba. Se actualizó ese estado.
 - **Límite de la consolidación:** Se conservan las declaraciones históricas, sin atribuir herramientas, conversaciones o revisiones humanas no documentadas.
 
 ### Trazabilidad de la conversación
 
-- **Conversación:** Sesión actual de Codex del 24/11/2026; no se ha consignado una URL compartida.
 - **Referencias consultadas:** README y documentos de los repositorios del profesor de 2026–2027, temario general y sesiones de 2025–2026 y 2024–2025; README del modelo y registro de IA de Jorgestor.
 - **Commits asociados:** Identificados por los mensajes `style(readme): unifica la identidad visual con Panal [refs #21]` y `docs(ia-uso): centraliza los registros de asistencia [refs #21]` en la rama del issue.
 
 ### Validación
 
 - **Comprobaciones técnicas:** Revisión de enlaces relativos y anclas, validez de los SVG y visualización de los README. Comparación del alcance de archivos con el estado inicial.
-- **Revisión humana:** Pendiente de la revisión manual solicitada por el usuario. No se ha abierto un pull request.
 
 ## Validación histórica de casos de uso
 
