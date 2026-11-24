@@ -15,11 +15,12 @@
 
 ### Refactor de actores y casos de uso · v3 ([Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22))
 - **¿Se usó?:** Sí
-- **Propósito:** Redactar la revisión del PR #19 publicada en Discussions, y aplicar los cambios acordados en el Issue #22 sobre `actores-casos-uso.md`, los diagramas PlantUML y la guía de lectura, con un commit por cambio.
+- **Propósito:** Apoyo para revisar el PR #19 frente a la minuta de la sesión 01, redactar la propuesta de mejoras publicada en Discussions y aplicar en los archivos los cambios acordados por el equipo en el Issue #22, con un commit por cambio.
 - **Evaluación crítica:**
-  - **Aceptado:** Actor abstracto `ConsultorResultados` en lugar de la herencia desde `Profesor`; herencia del `Gestor` desde ese rol (justificada por la sesión 01); Campus Virtual / Panal como actor secundario; casos de uso de gestión de convocatoria y asignaciones (marcados como pendientes de validar); diagramas de contexto; glosario propio enlazado al del modelo del dominio; v1 y v2 conservadas en `historico/` y el texto de la v2 conservado en el documento, con el refactor v3 en una sección propia.
-  - **Rechazado:** Mover los diagramas a una carpeta `modelosUML`. Aunque lo indica el README principal, el resto del repositorio usa `diagramas/` y cambiarlo solo en casos de uso rompía la coherencia. Se deja como decisión pendiente del grupo.
-  - **Rechazado:** Modelar el Servidor de correo como actor secundario. El equipo considera que el correo es solo un canal de notificación y no una entidad externa con interacción propia; se retiró en un commit posterior.
+  - **Aceptado tras revisión:** actor abstracto `ConsultorResultados` en lugar de la herencia desde `Profesor`; herencia del `Gestor` desde ese rol (comprobada con la sesión 01); Campus Virtual / Panal como actor secundario; casos de uso de gestión de convocatoria y asignaciones (marcados como pendientes de validar con el cliente); diagramas de contexto y glosario propio enlazado al del modelo del dominio.
+  - **Rechazado:** mover los diagramas a una carpeta `modelosUML`, porque el resto del repositorio usa `diagramas/` y cambiarlo solo en casos de uso rompía la coherencia. Se deja como decisión de grupo.
+  - **Rechazado:** modelar el Servidor de correo como actor secundario. El correo es solo un canal de notificación y no una entidad externa con interacción propia.
+  - **Corregido por el equipo:** la propuesta inicial sustituía el contenido de la v2. Se decidió conservar el texto original de la v2 y documentar el refactor en una sección propia con registro de cambios, para mantener la trazabilidad.
 
 ## Trazabilidad de Conversaciones
 
@@ -35,7 +36,7 @@
 ### Conversación 2: Revisión del PR #19 y refactor de actores y casos de uso (Issue #22)
 - **URL:** `https://claude.ai/code/session_01SfiCNLLgbq132FYQ84Y1eY`
 - **Fecha:** 2026-11-23 a 2026-11-24
-- **Resumen:** Revisión del PR #19 contrastada con la minuta de la sesión 01 y los apuntes de la asignatura, redacción del mensaje de Discussions y aplicación del refactor en la rama `refactor/issue-22-refactorizar-actores-y-casos-de-uso`.
+- **Resumen:** Apoyo en la revisión del PR #19 y en la aplicación del refactor acordado en Discussions. La IA propuso alternativas y aplicó los cambios en la rama `refactor/issue-22-refactorizar-actores-y-casos-de-uso`; el equipo decidió qué cambios aceptar, cuáles descartar y cómo documentarlos, y revisó el resultado antes de subirlo.
 - **Commits asociados:**
   - `d87b04b` (`refactor(cu): unifica diagrama y añade actor abstracto ConsultorResultados [refs #22]`)
   - `5e3b9d5` (`fix(cu): asocia consulta y exportación de resultados al Gestor [refs #22]`)
