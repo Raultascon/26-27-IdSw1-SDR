@@ -5,7 +5,7 @@
 ## Información del artefacto
 
 - **Proyecto**: Sistema de Encuestas de Satisfacción del Profesorado (`26-27-IdSw1-SDR`)
-- **Disciplina**: Requisitos · Identificación de actores y casos de uso (`v1` y `v2`)
+- **Disciplina**: Requisitos · Identificación de actores y casos de uso (`v3`)
 - **Fecha**: 2026-11-23
 - **Autor**: Diego Alonso Díaz ([Issue #15](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/15))
 
@@ -42,33 +42,30 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 - **Alumnos ERASMUS+**: No se modelan como un actor separado; son instancias de **Alumno** (`Estudiante` con `esErasmus = true` en el modelo del dominio) a las que no se les generan asignaciones de evaluación.
 - **Campus Virtual / Panal**: Actúa como entorno universitario de integración y autenticación, sin constituir un actor con objetivos de negocio propios en esta fase.
 
-## Diagramas de actores y casos de uso
+## Diagrama de actores y casos de uso
 
-### Iteración 1 (`v1`) · Asociaciones directas
-
-Primera identificación plana donde cada actor se conecta directamente con los casos de uso en los que interviene.
+Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/`](../historico/) como referencia de la evolución del modelo.
 
 <div align=center>
 
-| Actores y casos de uso · v1 |
+| Actores y casos de uso · v3 |
 | :-: |
-| ![Diagrama de actores y casos de uso v1](../diagramas/actoresCasosUso.svg) |
+| ![Diagrama de actores y casos de uso](../diagramas/actoresCasosUso.svg) |
 | Código fuente: [actoresCasosUso.puml](../diagramas/actoresCasosUso.puml) |
 
 </div>
 
-### Iteración 2 (`v2`) · Generalización de roles de consulta
+### Generalización de roles de consulta
 
-Refinamiento estructural aplicando **herencia entre actores (`--|>`)**: dado que **Profesor**, **Director de grado** y **Departamento de calidad** ejecutan las mismas operaciones funcionales de consulta y exportación tras el cierre, **Director de grado** y **Departamento de calidad** heredan las asociaciones de **Profesor**, eliminando el cruce de líneas y diferenciándose únicamente por el ámbito de visibilidad de los datos (docencia, grado o institución).
+**Profesor**, **Director de grado** y **Departamento de calidad** realizan las mismas operaciones de consulta y exportación tras el cierre, pero no son una especialización unos de otros: el Departamento de calidad no es un profesor ni es evaluado. Por ello se introduce el actor abstracto **ConsultorResultados**, que concentra las asociaciones con `consultarResultados()` y `exportarResultados()`, y del que heredan los tres roles. Cada uno se diferencia únicamente por el ámbito de visibilidad de los datos (docencia, grado o institución).
 
-<div align=center>
+### Evolución
 
-| Actores y casos de uso · v2 |
-| :-: |
-| ![Diagrama de actores y casos de uso v2](../diagramas/actoresCasosUso-v2.svg) |
-| Código fuente: [actoresCasosUso-v2.puml](../diagramas/actoresCasosUso-v2.puml) |
-
-</div>
+| Versión | Cambio | Diagrama |
+| :---: | :--- | :--- |
+| `v1` | Identificación plana: cada actor se asocia directamente con sus casos de uso. | [SVG](../historico/v1/actoresCasosUso-v1.svg) · [PUML](../historico/v1/actoresCasosUso-v1.puml) |
+| `v2` | Director de grado y Departamento de calidad heredan de Profesor. Descartada: la herencia implicaba que ambos eran profesores. | [SVG](../historico/v2/actoresCasosUso-v2.svg) · [PUML](../historico/v2/actoresCasosUso-v2.puml) |
+| `v3` | Actor abstracto ConsultorResultados como rol base de consulta ([Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22)). | Vigente |
 
 ## Catálogo de casos de uso
 
@@ -79,9 +76,10 @@ Refinamiento estructural aplicando **herencia entre actores (`--|>`)**: dado que
 | **Gestor (ordenación académica)** | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()` |
 | **Alumno** | `consultarAsignaciones()`, `responderEvaluacion()` |
 | **Tiempo** | `abrirConvocatoria()`, `enviarRecordatorios()`, `cerrarConvocatoria()` |
-| **Profesor** *(rol base de consulta)* | `consultarResultados()`, `exportarResultados()` |
-| **Director de grado** *(hereda de Profesor)* | `consultarResultados()`, `exportarResultados()` *(ámbito: titulación)* |
-| **Departamento de calidad** *(hereda de Profesor)* | `consultarResultados()`, `exportarResultados()` *(ámbito: institución)* |
+| **ConsultorResultados** *(abstracto, rol base de consulta)* | `consultarResultados()`, `exportarResultados()` |
+| **Profesor** *(hereda de ConsultorResultados)* | `consultarResultados()`, `exportarResultados()` *(ámbito: sus docencias)* |
+| **Director de grado** *(hereda de ConsultorResultados)* | `consultarResultados()`, `exportarResultados()` *(ámbito: titulación)* |
+| **Departamento de calidad** *(hereda de ConsultorResultados)* | `consultarResultados()`, `exportarResultados()` *(ámbito: institución)* |
 
 ### Descripción funcional a nivel de negocio
 
