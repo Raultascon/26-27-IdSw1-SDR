@@ -15,7 +15,7 @@ Este documento define los actores externos y el catálogo inicial de casos de us
 
 Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas:
 1. **Actores fuera de la frontera del sistema**: Todos los actores (humanos, organizativos o temporales) se sitúan fuera del límite del sistema, representando únicamente entidades externas que inician o participan en una interacción.
-2. **Nivel de abstracción de negocio**: Los casos de uso expresan objetivos funcionales del dominio sin mezclar acciones de navegación o interfaz (como apertura de pantallas o listados CRUD técnicos), que corresponden a iteraciones posteriores de refinamiento.
+2. **Nivel de abstracción de negocio**: Los casos de uso expresan objetivos funcionales del dominio sin mezclar acciones de navegación o interfaz (como apertura de pantallas), que corresponden a iteraciones posteriores de refinamiento. Sí se incluyen los casos de uso necesarios para crear, modificar y cancelar los objetos de negocio que gestiona cada actor (convocatoria y asignaciones), salvo los excluidos expresamente por el cliente.
 3. **Sin relaciones `<<include>>` ni `<<extend>>`**: Cada caso de uso representa una interacción directa y autónoma entre actor y sistema.
 
 ## Actores identificados
@@ -24,6 +24,7 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 | :--- | :---: | :--- | :--- |
 | **Gestor (ordenación académica)** | Humano / Organizativo | Responsable operativo de la gestión administrativa de las campañas de evaluación docente. | Configurar la plantilla fija del cuestionario |
 | | | | Planificar la convocatoria semestral y generar las asignaciones |
+| | | | Modificar o cancelar una convocatoria ya preparada y corregir asignaciones |
 | | | | Supervisar el nivel global de participación sin comprometer el anonimato |
 | | | | Consultar y exportar los resultados consolidados de toda la convocatoria tras el cierre |
 | **Alumno** | Humano | Estudiante matriculado en docencias del semestre (excluyendo alumnos ERASMUS+ de la asignación). | Consultar sus docencias asignadas (pendientes y enviadas) |
@@ -77,7 +78,7 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 
 | Actor | Casos de uso asociados |
 | :--- | :--- |
-| **Gestor (ordenación académica)** *(hereda de ConsultorResultados)* | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()`, `consultarResultados()`, `exportarResultados()` *(ámbito: toda la convocatoria)* |
+| **Gestor (ordenación académica)** *(hereda de ConsultorResultados)* | `configurarCuestionario()`, `prepararConvocatoria()`, `modificarConvocatoria()`, `cancelarConvocatoria()`, `modificarAsignaciones()`, `consultarParticipacion()`, `consultarResultados()`, `exportarResultados()` *(ámbito: toda la convocatoria)* |
 | **Alumno** | `consultarAsignaciones()`, `responderEvaluacion()` |
 | **Tiempo** | `abrirConvocatoria()`, `enviarRecordatorios()`, `cerrarConvocatoria()` |
 | **ConsultorResultados** *(abstracto, rol base de consulta)* | `consultarResultados()`, `exportarResultados()` |
@@ -90,6 +91,9 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 #### Gestión de campaña (Gestor)
 - **`configurarCuestionario()`**: Define o revisa la plantilla común de 11 ítems numéricos obligatorios (escala 1–5) y el enunciado de observaciones opcionales antes de activar la convocatoria.
 - **`prepararConvocatoria()`**: Crea la convocatoria semestral fijando `fechaApertura` y `fechaCierre`, vincula el cuestionario común y genera las `AsignacionEvaluacion` para los alumnos elegibles (excluyendo alumnos ERASMUS+).
+- **`modificarConvocatoria()`**: Cambia las fechas de una convocatoria ya preparada (por ejemplo, retrasar la apertura o ampliar el plazo de respuesta mientras sigue abierta). La [sesión 01](../../sesiones/sesion01.md) establece que es el administrador quien fija la fecha exacta.
+- **`cancelarConvocatoria()`**: Anula una convocatoria preparada que aún no se ha abierto, sin generar notificaciones a los alumnos.
+- **`modificarAsignaciones()`**: Añade o retira asignaciones de evaluación de forma individual (por ejemplo, un alumno matriculado tarde o una asignación generada por error) sin afectar a las evaluaciones ya enviadas.
 - **`consultarParticipacion()`**: Consulta el recuento y porcentaje de evaluaciones enviadas frente a asignadas para supervisar el desarrollo de la campaña sin vincular identidad con respuestas.
 
 #### Participación estudiantil (Alumno)
@@ -108,4 +112,5 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 ## Trazabilidad y exclusiones del dominio
 
 - **Correspondencia con el Modelo del Dominio v3**: Los casos de uso operan directamente sobre `Cuestionario` e `Item` (configuración), `Convocatoria` y `AsignacionEvaluacion` (planificación, participación y notificaciones), y `Evaluacion` y `Puntuacion` agrupadas por `Docencia` y `Grado` (envío anónimo y cálculo de resultados).
+- **Propuestas pendientes de validar**: `modificarConvocatoria()`, `cancelarConvocatoria()` y `modificarAsignaciones()` se proponen para completar la gestión de la campaña y deben confirmarse con el cliente.
 - **Comportamientos excluidos explícitamente**: Por requisito expreso del cliente en la [sesión 01](../../sesiones/sesion01.md), no existen casos de uso para eliminar evaluaciones recibidas, censurar observaciones opcionales ni modificar respuestas una vez enviadas.

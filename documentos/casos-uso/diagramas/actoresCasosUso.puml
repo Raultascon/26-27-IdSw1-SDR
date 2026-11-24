@@ -8,6 +8,9 @@ actor "Tiempo" as Tiempo
 rectangle "Sistema de Encuestas de Evaluación Docente" {
   usecase configurarCuestionario as "configurarCuestionario()"
   usecase prepararConvocatoria as "prepararConvocatoria()"
+  usecase modificarConvocatoria as "modificarConvocatoria()"
+  usecase cancelarConvocatoria as "cancelarConvocatoria()"
+  usecase modificarAsignaciones as "modificarAsignaciones()"
   usecase consultarParticipacion as "consultarParticipacion()"
   usecase consultarAsignaciones as "consultarAsignaciones()"
   usecase responderEvaluacion as "responderEvaluacion()"
@@ -28,6 +31,9 @@ actor "Servidor de correo" as ServidorCorreo <<sistema>>
 
 Gestor --> configurarCuestionario
 Gestor --> prepararConvocatoria
+Gestor --> modificarConvocatoria
+Gestor --> cancelarConvocatoria
+Gestor --> modificarAsignaciones
 Gestor --> consultarParticipacion
 
 Alumno --> consultarAsignaciones
