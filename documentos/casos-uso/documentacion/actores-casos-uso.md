@@ -37,11 +37,14 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 | | | | Exportar los informes de resultados de su titulación |
 | **Departamento de calidad** | Organizativo | Unidad institucional encargada del aseguramiento de la calidad docente. | Consultar los resultados consolidados globales de toda la convocatoria |
 | | | | Exportar los informes institucionales para evaluación de calidad |
+| **Campus Virtual / Panal** | Sistema externo (secundario) | Entorno universitario en el que se integra el sistema. | Proporcionar los datos académicos (alumnos, docencias, condición ERASMUS+) para generar las asignaciones |
+| | | | Mostrar las notificaciones y avisos recurrentes a los alumnos |
+| **Servidor de correo** | Sistema externo (secundario) | Servicio de correo electrónico de la universidad. | Entregar a los alumnos la notificación de apertura y los recordatorios |
 
 ### Decisiones sobre el alcance de actores
 
 - **Alumnos ERASMUS+**: No se modelan como un actor separado; son instancias de **Alumno** (`Estudiante` con `esErasmus = true` en el modelo del dominio) a las que no se les generan asignaciones de evaluación.
-- **Campus Virtual / Panal**: Actúa como entorno universitario de integración y autenticación, sin constituir un actor con objetivos de negocio propios en esta fase.
+- **Campus Virtual / Panal y Servidor de correo**: Se modelan como **actores secundarios**. No inician casos de uso, pero el sistema interactúa con ellos a través de su frontera: obtiene del Campus Virtual los datos académicos y les envía las notificaciones que la [sesión 01](../../sesiones/sesion01.md) exige "tanto a través del campus virtual como por correo electrónico".
 
 ## Diagrama de actores y casos de uso
 

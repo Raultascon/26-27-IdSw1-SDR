@@ -23,6 +23,9 @@ actor "Profesor" as Profesor
 actor "Director de grado" as DirectorGrado
 actor "Departamento de calidad" as Calidad
 
+actor "Campus Virtual / Panal" as CampusVirtual <<sistema>>
+actor "Servidor de correo" as ServidorCorreo <<sistema>>
+
 Gestor --> configurarCuestionario
 Gestor --> prepararConvocatoria
 Gestor --> consultarParticipacion
@@ -41,4 +44,10 @@ ConsultorResultados <|-- Profesor
 ConsultorResultados <|-- DirectorGrado
 ConsultorResultados <|-- Calidad
 ConsultorResultados <|-- Gestor
+
+prepararConvocatoria --> CampusVirtual
+abrirConvocatoria --> CampusVirtual
+abrirConvocatoria --> ServidorCorreo
+enviarRecordatorios --> CampusVirtual
+enviarRecordatorios --> ServidorCorreo
 @enduml
