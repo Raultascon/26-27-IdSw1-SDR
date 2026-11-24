@@ -8,6 +8,7 @@
 - **Disciplina**: Requisitos · Identificación de actores y casos de uso (`v3`)
 - **Fecha**: 2026-11-23
 - **Autor**: Diego Alonso Díaz ([Issue #15](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/15))
+- **Revisión `v3`**: Adrián Solar, 2026-11-24 ([Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22))
 
 ## Introducción y criterios de modelado
 
