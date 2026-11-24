@@ -25,6 +25,7 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 | **Gestor (ordenación académica)** | Humano / Organizativo | Responsable operativo de la gestión administrativa de las campañas de evaluación docente. | Configurar la plantilla fija del cuestionario |
 | | | | Planificar la convocatoria semestral y generar las asignaciones |
 | | | | Supervisar el nivel global de participación sin comprometer el anonimato |
+| | | | Consultar y exportar los resultados consolidados de toda la convocatoria tras el cierre |
 | **Alumno** | Humano | Estudiante matriculado en docencias del semestre (excluyendo alumnos ERASMUS+ de la asignación). | Consultar sus docencias asignadas (pendientes y enviadas) |
 | | | | Cumplimentar y enviar de forma individual y anónima cada evaluación |
 | **Tiempo** | Temporal | Disparador automático del sistema regido por el calendario de la convocatoria. | Activar la convocatoria en su fecha de apertura y notificar a los alumnos |
@@ -57,7 +58,7 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 
 ### Generalización de roles de consulta
 
-**Profesor**, **Director de grado** y **Departamento de calidad** realizan las mismas operaciones de consulta y exportación tras el cierre, pero no son una especialización unos de otros: el Departamento de calidad no es un profesor ni es evaluado. Por ello se introduce el actor abstracto **ConsultorResultados**, que concentra las asociaciones con `consultarResultados()` y `exportarResultados()`, y del que heredan los tres roles. Cada uno se diferencia únicamente por el ámbito de visibilidad de los datos (docencia, grado o institución).
+**Profesor**, **Director de grado** y **Departamento de calidad** realizan las mismas operaciones de consulta y exportación tras el cierre, pero no son una especialización unos de otros: el Departamento de calidad no es un profesor ni es evaluado. Por ello se introduce el actor abstracto **ConsultorResultados**, que concentra las asociaciones con `consultarResultados()` y `exportarResultados()`, y del que heredan los tres roles. El **Gestor** también hereda de este rol, ya que la minuta indica que el administrador recibe los resultados al cierre y puede ver todas las respuestas. Cada uno se diferencia únicamente por el ámbito de visibilidad de los datos (docencia, grado, institución o convocatoria completa).
 
 ### Evolución
 
@@ -73,7 +74,7 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 
 | Actor | Casos de uso asociados |
 | :--- | :--- |
-| **Gestor (ordenación académica)** | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()` |
+| **Gestor (ordenación académica)** *(hereda de ConsultorResultados)* | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()`, `consultarResultados()`, `exportarResultados()` *(ámbito: toda la convocatoria)* |
 | **Alumno** | `consultarAsignaciones()`, `responderEvaluacion()` |
 | **Tiempo** | `abrirConvocatoria()`, `enviarRecordatorios()`, `cerrarConvocatoria()` |
 | **ConsultorResultados** *(abstracto, rol base de consulta)* | `consultarResultados()`, `exportarResultados()` |
@@ -97,8 +98,8 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 - **`enviarRecordatorios()`**: Emite avisos periódicos en el Campus Virtual/Panal y por correo electrónico a los alumnos que mantienen asignaciones pendientes mientras el plazo sigue abierto.
 - **`cerrarConvocatoria()`**: Finaliza el periodo de respuesta al alcanzarse `fechaCierre`, bloquea nuevos envíos y pone los resultados consolidados a disposición simultánea del profesorado, dirección de grado, departamento de calidad y gestión.
 
-#### Consulta y explotación de resultados (Profesor, Director de grado, Departamento de calidad)
-- **`consultarResultados()`**: Muestra el número de valoraciones (`N`), las 11 medias por ítem, la media global calculada y los comentarios abiertos tras el cierre, filtrados según el rol: sus docencias para el **Profesor**, su titulación (`Grado`) para el **Director de grado** y la vista global del centro para el **Departamento de calidad**.
+#### Consulta y explotación de resultados (ConsultorResultados: Profesor, Director de grado, Departamento de calidad y Gestor)
+- **`consultarResultados()`**: Muestra el número de valoraciones (`N`), las 11 medias por ítem, la media global calculada y los comentarios abiertos tras el cierre, filtrados según el rol: sus docencias para el **Profesor**, su titulación (`Grado`) para el **Director de grado** y la vista global del centro para el **Departamento de calidad** y todas las respuestas de la convocatoria para el **Gestor**, que según la [sesión 01](../../sesiones/sesion01.md) recibe los resultados al cierre junto a los profesores y puede ver todas las respuestas.
 - **`exportarResultados()`**: Genera y descarga un informe en formato PDF o Excel con los resultados consolidados y observaciones correspondientes al ámbito del actor solicitante.
 
 ## Trazabilidad y exclusiones del dominio

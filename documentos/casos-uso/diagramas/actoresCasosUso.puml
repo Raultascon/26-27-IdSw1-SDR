@@ -40,4 +40,5 @@ exportarResultados <-- ConsultorResultados
 ConsultorResultados <|-- Profesor
 ConsultorResultados <|-- DirectorGrado
 ConsultorResultados <|-- Calidad
+ConsultorResultados <|-- Gestor
 @enduml
