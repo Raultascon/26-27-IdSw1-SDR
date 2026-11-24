@@ -2,7 +2,7 @@
 
 [Inicio](../README.md) · [Convenciones](CONVENCIONES.md)
 
-Registro central de la asistencia con IA en el proyecto. Reúne las entradas de documentación y casos de uso de este archivo y las del modelo del dominio antes ubicadas en `modelos/seguimiento/AI-uso.md`. La ruta antigua se conserva como acceso a este registro.
+Registro central de la asistencia con IA en el proyecto. Reúne las entradas de documentación y casos de uso de este archivo y las del modelo del dominio antes ubicadas en `modelos/seguimiento/AI-uso.md`. Las referencias del modelo apuntan directamente a este registro.
 
 Cada entrada recoge herramientas y fechas, contexto y evaluación crítica, trazabilidad de la conversación y validación. «No consta» indica información ausente en el registro original; no presupone que se realizara o no una revisión.
 
@@ -171,7 +171,7 @@ El registro original indica que el equipo decidió qué cambios aceptar, cuáles
 
 - **¿Se usó?:** Sí.
 - **Propósito:** Rediseñar los cuatro README con recursos SVG locales y navegación mediante iconos, contrastar su contenido con la minuta y el refactor ya integrado y reunir los registros de IA.
-- **Criterios aplicados a la propuesta:** Paleta inspirada en las capturas de Panal aportadas por el usuario y organización visual de Jorgestor; marca gráfica propia para el proyecto académico. Se conserva la documentación de requisitos y sus diagramas. La ruta antigua del registro de IA mantiene un enlace al central para conservar las referencias.
+- **Criterios aplicados a la propuesta:** Paleta inspirada en las capturas de Panal aportadas por el usuario y organización visual de Jorgestor; marca gráfica propia para el proyecto académico. Se conserva la documentación de requisitos y sus diagramas. Se elimina el archivo de acceso de la ruta antigua y se actualizan sus referencias al registro central.
 - **Corrección detectada:** La portada anterior indicaba que los diagramas de contexto estaban pendientes de integración; el merge de `develop` ya los incorporaba. Se actualizó ese estado.
 - **Límite de la consolidación:** Se conservan las declaraciones históricas, sin atribuir herramientas, conversaciones o revisiones humanas no documentadas.
 

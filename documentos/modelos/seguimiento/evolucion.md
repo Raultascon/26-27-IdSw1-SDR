@@ -1,6 +1,6 @@
 # Evolución del modelo del dominio
 
-[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](AI-uso.md)
+[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](../../AI-uso.md#modelo-del-dominio-v3)
 
 La propuesta actual está documentada en [dominio-v3.md](../documentacion/dominio-v3.md). Este documento conserva la procedencia de las versiones y explica sus cambios; no convierte los modelos antiguos en modelos vigentes.
 
@@ -21,7 +21,7 @@ Commits principales de v3:
 
 El commit de v2 eliminó los archivos de v1. Recuperarlos en `documentos/modelos/historico/v1/` permite comparar sin reescribir el historial ni alterar la autoría original. Su contenido, incluidas agregaciones y composiciones antiguas, se conserva como evidencia histórica: **v3 no utiliza esas relaciones**. No se regeneran las imágenes antiguas ni se corrigen sus errores retrospectivamente.
 
-El registro de IA anterior también se conserva. La nueva entrada se limita al uso de Codex para código PUML, revisión de posibles errores y propuestas de mejora.
+Las entradas de IA de v1 y v3 se conservan en el [registro central](../../AI-uso.md#modelo-del-dominio-v1). La nueva entrada se limita al uso de Codex para código PUML, revisión de posibles errores y propuestas de mejora.
 
 ## Revisión de v1 y v2
 
@@ -68,4 +68,4 @@ La rúbrica histórica valora agregación/composición y menciona cantidades de 
 
 ---
 
-[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](AI-uso.md) · [Volver arriba](#evolución-del-modelo-del-dominio)
+[Índice del modelo](../README.md) · [← Reglas y decisiones](../documentacion/trazabilidad-v3.md) · [Uso de IA →](../../AI-uso.md#modelo-del-dominio-v3) · [Volver arriba](#evolución-del-modelo-del-dominio)

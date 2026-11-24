@@ -42,7 +42,7 @@ modelos/
 │   ├── clases/
 │   ├── objetos/
 │   └── actividad/
-├── seguimiento/              Evolución del modelo y acceso al registro central de IA
+├── seguimiento/              Evolución del modelo
 └── historico/                Versiones anteriores, conservadas sin cambios
     ├── v1/
     └── v2/
