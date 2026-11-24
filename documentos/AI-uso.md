@@ -44,6 +44,9 @@
   - `65cf1f0` (`feat(cu): añade diagramas de contexto del Gestor y del Alumno [refs #22]`)
   - `ec75850` (`docs(cu): añade glosario de actores y casos de uso [refs #22]`)
   - `b81cfc5` (`docs(cu): registra la revisión v3 en la información del artefacto [refs #22]`)
+  - `901cb76` (`refactor(cu): retira Servidor de correo como actor secundario [refs #22]`)
+  - `9a6cfda` (`feat(cu): exporta diagramas v3 y de contexto a SVG [refs #22]`)
+  - `666ac0f` (`fix(cu): corrige enlace roto al modelo del dominio v3 [refs #22]`)
 
 ## Validación Humana
 
