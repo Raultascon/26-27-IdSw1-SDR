@@ -41,12 +41,12 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 | | | | Exportar los informes institucionales para evaluación de calidad |
 | **Campus Virtual / Panal** | Sistema externo (secundario) | Entorno universitario en el que se integra el sistema. | Proporcionar los datos académicos (alumnos, docencias, condición ERASMUS+) para generar las asignaciones |
 | | | | Mostrar las notificaciones y avisos recurrentes a los alumnos |
-| **Servidor de correo** | Sistema externo (secundario) | Servicio de correo electrónico de la universidad. | Entregar a los alumnos la notificación de apertura y los recordatorios |
 
 ### Decisiones sobre el alcance de actores
 
 - **Alumnos ERASMUS+**: No se modelan como un actor separado; son instancias de **Alumno** (`Estudiante` con `esErasmus = true` en el modelo del dominio) a las que no se les generan asignaciones de evaluación.
-- **Campus Virtual / Panal y Servidor de correo**: Se modelan como **actores secundarios**. No inician casos de uso, pero el sistema interactúa con ellos a través de su frontera: obtiene del Campus Virtual los datos académicos y les envía las notificaciones que la [sesión 01](../../sesiones/sesion01.md) exige "tanto a través del campus virtual como por correo electrónico".
+- **Campus Virtual / Panal**: Se modela como **actor secundario**. No inicia casos de uso, pero el sistema interactúa con él a través de su frontera: obtiene los datos académicos y publica en él las notificaciones y avisos recurrentes.
+- **Correo electrónico**: No se modela como actor. La [sesión 01](../../sesiones/sesion01.md) lo establece como canal de notificación junto al campus, pero no aporta objetivos ni datos propios al sistema; se recoge en la descripción de `abrirConvocatoria()` y `enviarRecordatorios()`.
 
 ## Diagrama de actores y casos de uso
 
@@ -132,7 +132,7 @@ Los conceptos del dominio (Convocatoria, Docencia, AsignacionEvaluacion, Evaluac
 | Término | Significado |
 | :--- | :--- |
 | **Actor** | Rol externo (persona, sistema o evento temporal) que interactúa con el sistema a través de su frontera. Representa un rol, no a una persona concreta. |
-| **Actor secundario** | Sistema externo con el que el sistema interactúa sin que inicie casos de uso: Campus Virtual / Panal y Servidor de correo. |
+| **Actor secundario** | Sistema externo con el que el sistema interactúa sin que inicie casos de uso: Campus Virtual / Panal. |
 | **Gestor (ordenación académica)** | Rol que la [sesión 01](../../sesiones/sesion01.md) denomina **administrador**: fija las fechas, gestiona la campaña y puede ver todas las respuestas. |
 | **ConsultorResultados** | Actor abstracto que agrupa a quienes consultan y exportan resultados tras el cierre. No existe por sí mismo; solo se concreta en Profesor, Director de grado, Departamento de calidad o Gestor. |
 | **Ámbito de visibilidad** | Subconjunto de resultados al que accede cada ConsultorResultados: sus docencias, su grado, la institución o la convocatoria completa. |
