@@ -1,5 +1,24 @@
 ## Declaración de Uso de IA
 
+[Inicio](../README.md) · [Convenciones](CONVENCIONES.md) · [Registro de IA del modelo](modelos/seguimiento/AI-uso.md)
+
+**En esta página**
+
+- [Estructuración visual de la documentación · Issue #21](#estructuración-visual-de-la-documentación--issue-21)
+- [Herramientas utilizadas](#herramientas-utilizadas)
+- [Contexto de uso por artefacto](#contexto-de-uso-por-artefacto)
+- [Trazabilidad de conversaciones](#trazabilidad-de-conversaciones)
+- [Validación humana](#validación-humana)
+
+## Estructuración visual de la documentación · [Issue #21](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/21)
+
+- **¿Se usó?** Sí. OpenAI Codex, 2026-11-24.
+- **Propósito.** Comparar repositorios de cursos anteriores, reorganizar la navegación, redactar el README y revisar el formato y los enlaces de la documentación.
+- **Evaluación crítica.** Se adoptó la navegación por artefactos de [Jorgestor](https://github.com/martinlopez7/25-26-IdSw1-SdR) mediante enlaces Markdown. El estado de los entregables se contrastó con la minuta, `develop` y el seguimiento de los issues. Los artefactos de fases posteriores figuran como pendientes de elaboración o de integración, según su estado.
+- **Conversación.** Sesión de Codex del 24/11/2026. El registro del repositorio queda vinculado al issue.
+- **Mensaje del commit.** `docs(repo): reorganiza la navegación de la documentación [refs #21]`.
+- **Comprobaciones.** Revisión de rutas y anclas internas, tablas y bloques de código. Se corrigió un enlace al modelo v3 y se cerró el bloque de plantilla de las convenciones. Revisión humana del resultado pendiente.
+
 ## Herramientas Utilizadas
 - **Herramientas:** Google Gemini
 - **Fechas:** 2026-11-23
@@ -26,7 +45,7 @@
 
 ## Validación Humana
 
-- **Mecanismos de validación:** Revisión crítica de cada propuesta generada por la IA contrastándola con los criterios explicados por el profesor en clase, la minuta de la sesión 01 (`sesion01.md`) y el Modelo del dominio v3 (`modelo-v3.md`), además de comprobar visualmente el renderizado de diagramas `.svg` y enlaces en GitHub.
+- **Mecanismos de validación:** Revisión crítica de cada propuesta generada por la IA contrastándola con los criterios explicados por el profesor en clase, la [minuta de la sesión 01](sesiones/sesion01.md) y el [modelo del dominio v3](modelos/documentacion/dominio-v3.md), además de comprobar visualmente el renderizado de diagramas `.svg` y enlaces en GitHub.
 - **Errores detectados:**
   - **Abuso de `<<include>>` y mezcla de niveles de abstracción:** Al mostrarle un repositorio antiguo de ejemplo (`pySigHor`), la IA copió literalmente ese patrón introduciendo flechas `<<include>>` y casos de uso de navegación de interfaz (`abrirCuestionario()`, `abrirConvocatorias()`, `abrirAsignaciones()`). Se rechazó porque en clase se indicó evitar el uso excesivo de `<<include>>`/`<<extend>>` y mantener esta primera iteración estrictamente a nivel de negocio sin detalles técnicos ni de pantalla.
   - **Cruce innecesario de flechas en `v1`:** La propuesta inicial de la IA conectaba por separado a `Profesor`, `Director de grado` y `Departamento de calidad` con los casos de uso de consulta y exportación, generando 6 líneas cruzadas difíciles de leer. Se le indicó aplicar herencia (`--|>`) en una segunda iteración (`v2`) siguiendo las buenas prácticas vistas en clase.

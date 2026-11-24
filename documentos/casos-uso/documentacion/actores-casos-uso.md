@@ -11,7 +11,7 @@
 
 ## Introducción y criterios de modelado
 
-Este documento define los actores externos y el catálogo inicial de casos de uso del sistema a partir de los requisitos recogidos en la [sesión 01 (26/10/2026)](../../sesiones/sesion01.md) y las entidades del [Modelo del dominio v3](../../modelos/documentacion/modelo-v3.md).
+Este documento define los actores externos y el catálogo inicial de casos de uso del sistema a partir de los requisitos recogidos en la [sesión 01 (26/10/2026)](../../sesiones/sesion01.md) y las entidades del [Modelo del dominio v3](../../modelos/documentacion/dominio-v3.md).
 
 Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas:
 1. **Actores fuera de la frontera del sistema**: Todos los actores (humanos, organizativos o temporales) se sitúan fuera del límite del sistema, representando únicamente entidades externas que inician o participan en una interacción.
@@ -20,22 +20,22 @@ Para garantizar la rigorosidad metodológica de esta fase se aplican tres reglas
 
 ## Actores identificados
 
-| Actor | Tipo | Descripción | Responsabilidades principales |
-| :--- | :---: | :--- | :--- |
-| **Gestor (ordenación académica)** | Humano / Organizativo | Responsable operativo de la gestión administrativa de las campañas de evaluación docente. | Configurar la plantilla fija del cuestionario |
-| | | | Planificar la convocatoria semestral y generar las asignaciones |
-| | | | Supervisar el nivel global de participación sin comprometer el anonimato |
-| **Alumno** | Humano | Estudiante matriculado en docencias del semestre (excluyendo alumnos ERASMUS+ de la asignación). | Consultar sus docencias asignadas (pendientes y enviadas) |
-| | | | Cumplimentar y enviar de forma individual y anónima cada evaluación |
-| **Tiempo** | Temporal | Disparador automático del sistema regido por el calendario de la convocatoria. | Activar la convocatoria en su fecha de apertura y notificar a los alumnos |
-| | | | Enviar recordatorios recurrentes mientras el plazo sigue abierto |
-| | | | Cerrar la convocatoria en la fecha límite y publicar los resultados |
-| **Profesor** | Humano | Docente impartidor evaluado en cada asignatura y grado en el que participa. | Consultar las medias por ítem, media global, número de valoraciones y comentarios de sus docencias tras el cierre |
-| | | | Exportar los resultados consolidados de sus docencias |
-| **Director de grado** | Humano / Organizativo | Responsable académico de una titulación concreta. | Consultar los resultados consolidados segmentados por su grado |
-| | | | Exportar los informes de resultados de su titulación |
-| **Departamento de calidad** | Organizativo | Unidad institucional encargada del aseguramiento de la calidad docente. | Consultar los resultados consolidados globales de toda la convocatoria |
-| | | | Exportar los informes institucionales para evaluación de calidad |
+| Actor                             | Tipo                  | Descripción                                                                                      | Responsabilidades principales                                                                                     |
+| :-------------------------------- | :-------------------: | :----------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| **Gestor (ordenación académica)** | Humano / Organizativo | Responsable operativo de la gestión administrativa de las campañas de evaluación docente.        | Configurar la plantilla fija del cuestionario                                                                     |
+|                                   |                       |                                                                                                  | Planificar la convocatoria semestral y generar las asignaciones                                                   |
+|                                   |                       |                                                                                                  | Supervisar el nivel global de participación sin comprometer el anonimato                                          |
+| **Alumno**                        | Humano                | Estudiante matriculado en docencias del semestre (excluyendo alumnos ERASMUS+ de la asignación). | Consultar sus docencias asignadas (pendientes y enviadas)                                                         |
+|                                   |                       |                                                                                                  | Cumplimentar y enviar de forma individual y anónima cada evaluación                                               |
+| **Tiempo**                        | Temporal              | Disparador automático del sistema regido por el calendario de la convocatoria.                   | Activar la convocatoria en su fecha de apertura y notificar a los alumnos                                         |
+|                                   |                       |                                                                                                  | Enviar recordatorios recurrentes mientras el plazo sigue abierto                                                  |
+|                                   |                       |                                                                                                  | Cerrar la convocatoria en la fecha límite y publicar los resultados                                               |
+| **Profesor**                      | Humano                | Docente impartidor evaluado en cada asignatura y grado en el que participa.                      | Consultar las medias por ítem, media global, número de valoraciones y comentarios de sus docencias tras el cierre |
+|                                   |                       |                                                                                                  | Exportar los resultados consolidados de sus docencias                                                             |
+| **Director de grado**             | Humano / Organizativo | Responsable académico de una titulación concreta.                                                | Consultar los resultados consolidados segmentados por su grado                                                    |
+|                                   |                       |                                                                                                  | Exportar los informes de resultados de su titulación                                                              |
+| **Departamento de calidad**       | Organizativo          | Unidad institucional encargada del aseguramiento de la calidad docente.                          | Consultar los resultados consolidados globales de toda la convocatoria                                            |
+|                                   |                       |                                                                                                  | Exportar los informes institucionales para evaluación de calidad                                                  |
 
 ### Decisiones sobre el alcance de actores
 
@@ -50,10 +50,10 @@ Primera identificación plana donde cada actor se conecta directamente con los c
 
 <div align=center>
 
-| Actores y casos de uso · v1 |
-| :-: |
+| Actores y casos de uso · v1                                                |
+| :------------------------------------------------------------------------: |
 | ![Diagrama de actores y casos de uso v1](../diagramas/actoresCasosUso.svg) |
-| Código fuente: [actoresCasosUso.puml](../diagramas/actoresCasosUso.puml) |
+| Código fuente: [actoresCasosUso.puml](../diagramas/actoresCasosUso.puml)   |
 
 </div>
 
@@ -63,9 +63,9 @@ Refinamiento estructural aplicando **herencia entre actores (`--|>`)**: dado que
 
 <div align=center>
 
-| Actores y casos de uso · v2 |
-| :-: |
-| ![Diagrama de actores y casos de uso v2](../diagramas/actoresCasosUso-v2.svg) |
+| Actores y casos de uso · v2                                                    |
+| :----------------------------------------------------------------------------: |
+| ![Diagrama de actores y casos de uso v2](../diagramas/actoresCasosUso-v2.svg)  |
 | Código fuente: [actoresCasosUso-v2.puml](../diagramas/actoresCasosUso-v2.puml) |
 
 </div>
@@ -74,14 +74,14 @@ Refinamiento estructural aplicando **herencia entre actores (`--|>`)**: dado que
 
 ### Resumen por actor
 
-| Actor | Casos de uso asociados |
-| :--- | :--- |
-| **Gestor (ordenación académica)** | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()` |
-| **Alumno** | `consultarAsignaciones()`, `responderEvaluacion()` |
-| **Tiempo** | `abrirConvocatoria()`, `enviarRecordatorios()`, `cerrarConvocatoria()` |
-| **Profesor** *(rol base de consulta)* | `consultarResultados()`, `exportarResultados()` |
-| **Director de grado** *(hereda de Profesor)* | `consultarResultados()`, `exportarResultados()` *(ámbito: titulación)* |
-| **Departamento de calidad** *(hereda de Profesor)* | `consultarResultados()`, `exportarResultados()` *(ámbito: institución)* |
+| Actor                                              | Casos de uso asociados                                                           |
+| :------------------------------------------------- | :------------------------------------------------------------------------------- |
+| **Gestor (ordenación académica)**                  | `configurarCuestionario()`, `prepararConvocatoria()`, `consultarParticipacion()` |
+| **Alumno**                                         | `consultarAsignaciones()`, `responderEvaluacion()`                               |
+| **Tiempo**                                         | `abrirConvocatoria()`, `enviarRecordatorios()`, `cerrarConvocatoria()`           |
+| **Profesor** *(rol base de consulta)*              | `consultarResultados()`, `exportarResultados()`                                  |
+| **Director de grado** *(hereda de Profesor)*       | `consultarResultados()`, `exportarResultados()` *(ámbito: titulación)*           |
+| **Departamento de calidad** *(hereda de Profesor)* | `consultarResultados()`, `exportarResultados()` *(ámbito: institución)*          |
 
 ### Descripción funcional a nivel de negocio
 
