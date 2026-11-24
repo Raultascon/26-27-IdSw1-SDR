@@ -1,0 +1,24 @@
+@startuml diagramaContexto-gestor
+hide empty description
+
+state "SISTEMA_DISPONIBLE" as Disponible
+state "CONVOCATORIA_PREPARADA" as Preparada
+state "CONVOCATORIA_ABIERTA" as Abierta
+state "CONVOCATORIA_CERRADA" as Cerrada
+
+[*] --> Disponible
+
+Disponible --> Disponible : configurarCuestionario()
+Disponible --> Preparada : prepararConvocatoria()
+
+Preparada --> Preparada : modificarConvocatoria()\nmodificarAsignaciones()
+Preparada --> Disponible : cancelarConvocatoria()
+Preparada --> Abierta : abrirConvocatoria()\n<<Tiempo>>
+
+Abierta --> Abierta : consultarParticipacion()\nmodificarConvocatoria()\nmodificarAsignaciones()
+Abierta --> Abierta : enviarRecordatorios()\n<<Tiempo>>
+Abierta --> Cerrada : cerrarConvocatoria()\n<<Tiempo>>
+
+Cerrada --> Cerrada : consultarResultados()\nexportarResultados()
+Cerrada --> Disponible : prepararConvocatoria()\n(siguiente semestre)
+@enduml
