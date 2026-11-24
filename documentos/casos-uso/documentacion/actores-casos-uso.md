@@ -124,6 +124,20 @@ Las transiciones marcadas con `<<Tiempo>>` las dispara el actor Tiempo según la
 - **`consultarResultados()`**: Muestra el número de valoraciones (`N`), las 11 medias por ítem, la media global calculada y los comentarios abiertos tras el cierre, filtrados según el rol: sus docencias para el **Profesor**, su titulación (`Grado`) para el **Director de grado** y la vista global del centro para el **Departamento de calidad** y todas las respuestas de la convocatoria para el **Gestor**, que según la [sesión 01](../../sesiones/sesion01.md) recibe los resultados al cierre junto a los profesores y puede ver todas las respuestas.
 - **`exportarResultados()`**: Genera y descarga un informe en formato PDF o Excel con los resultados consolidados y observaciones correspondientes al ámbito del actor solicitante.
 
+## Glosario de actores y casos de uso
+
+Los conceptos del dominio (Convocatoria, Docencia, AsignacionEvaluacion, Evaluacion, etc.) se definen en el [glosario del modelo del dominio v3](../../modelos/documentacion/glosario.md). Aquí solo se recogen los términos propios de este artefacto.
+
+| Término | Significado |
+| :--- | :--- |
+| **Actor** | Rol externo (persona, sistema o evento temporal) que interactúa con el sistema a través de su frontera. Representa un rol, no a una persona concreta. |
+| **Actor secundario** | Sistema externo con el que el sistema interactúa sin que inicie casos de uso: Campus Virtual / Panal y Servidor de correo. |
+| **Gestor (ordenación académica)** | Rol que la [sesión 01](../../sesiones/sesion01.md) denomina **administrador**: fija las fechas, gestiona la campaña y puede ver todas las respuestas. |
+| **ConsultorResultados** | Actor abstracto que agrupa a quienes consultan y exportan resultados tras el cierre. No existe por sí mismo; solo se concreta en Profesor, Director de grado, Departamento de calidad o Gestor. |
+| **Ámbito de visibilidad** | Subconjunto de resultados al que accede cada ConsultorResultados: sus docencias, su grado, la institución o la convocatoria completa. |
+| **Tiempo** | Actor que dispara los casos de uso asociados a las fechas de la convocatoria (apertura, recordatorios y cierre) sin intervención humana. |
+| **Diagrama de contexto** | Diagrama de estados que muestra qué casos de uso están disponibles en cada situación del sistema y cómo se pasa de una a otra. |
+
 ## Trazabilidad y exclusiones del dominio
 
 - **Correspondencia con el Modelo del Dominio v3**: Los casos de uso operan directamente sobre `Cuestionario` e `Item` (configuración), `Convocatoria` y `AsignacionEvaluacion` (planificación, participación y notificaciones), y `Evaluacion` y `Puntuacion` agrupadas por `Docencia` y `Grado` (envío anónimo y cálculo de resultados).
