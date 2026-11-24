@@ -1,39 +1,71 @@
+<p align="center">
+  <img src="documentos/recursos/portada.svg" alt="Encuestas de evaluación docente · Encuestas de evaluación docente · UNEATLANTICO" width="1200">
+</p>
+
+<p align="center">
+<a href="README.md"><img src="documentos/recursos/inicio.svg" alt="Inicio" height="32"></a>
+<a href="documentos/sesiones/README.md"><img src="documentos/recursos/sesiones.svg" alt="Sesiones" height="32"></a>
+<a href="documentos/modelos/README.md"><img src="documentos/recursos/modelo.svg" alt="Dominio" height="32"></a>
+<a href="documentos/casos-uso/README.md"><img src="documentos/recursos/casos.svg" alt="Casos de uso" height="32"></a>
+<a href="documentos/modelos/documentacion/glosario.md"><img src="documentos/recursos/glosario.svg" alt="Glosario" height="32"></a>
+<a href="documentos/AI-uso.md"><img src="documentos/recursos/ia.svg" alt="Uso de IA" height="32"></a>
+</p>
+
 # Encuestas de evaluación docente
 
-Proyecto de requisitado de **Ingeniería del Software I · UNEATLANTICO · Curso 2026–2027**
+Proyecto de requisitado de **Ingeniería del Software I · Curso 2026–2027**. Documentación elaborada a partir de la primera reunión con el cliente, celebrada el **26/10/2026**.
 
-[Sesiones con el cliente](documentos/sesiones/README.md) · [Modelo del dominio](documentos/modelos/README.md) · [Actores y casos de uso](documentos/casos-uso/README.md) · [Glosario](documentos/modelos/documentacion/glosario.md) · [Uso de IA](documentos/AI-uso.md)
+<details>
+<summary>En esta página</summary>
 
-**En esta página**
+- <a href="#el-proyecto"><img src="documentos/recursos/seccion.svg" alt="Ir a El proyecto" width="20"></a> El proyecto
+- <a href="#explorar-la-documentación"><img src="documentos/recursos/seccion.svg" alt="Ir a Explorar la documentación" width="20"></a> Explorar la documentación
+- <a href="#estado-de-los-entregables"><img src="documentos/recursos/seccion.svg" alt="Ir a Estado de los entregables" width="20"></a> Estado de los entregables
+- <a href="#próximos-pasos-y-referencias"><img src="documentos/recursos/seccion.svg" alt="Ir a Próximos pasos y referencias" width="20"></a> Próximos pasos y referencias
+- <a href="#equipo"><img src="documentos/recursos/seccion.svg" alt="Ir a Equipo" width="20"></a> Equipo
+- <a href="#estructura-del-repositorio"><img src="documentos/recursos/seccion.svg" alt="Ir a Estructura del repositorio" width="20"></a> Estructura del repositorio
+- <a href="#flujo-de-trabajo"><img src="documentos/recursos/seccion.svg" alt="Ir a Flujo de trabajo" width="20"></a> Flujo de trabajo
 
-- [Descripción del sistema](#descripción-del-sistema)
-- [Estado de los entregables](#estado-de-los-entregables)
-- [Equipo](#equipo)
-- [Estructura del repositorio](#estructura-del-repositorio)
-- [Flujo de trabajo](#flujo-de-trabajo)
+</details>
 
-## Descripción del sistema
+## El proyecto
 
 El sistema automatiza las encuestas semestrales de satisfacción docente. Cada estudiante elegible recibe las evaluaciones de los profesores que le han impartido cada asignatura. La participación es voluntaria y las respuestas son anónimas. El cuestionario contiene 11 ítems obligatorios, puntuados del 1 al 5, y un campo opcional de observaciones.
 
 El administrador fija las fechas de la convocatoria. El sistema avisa por el campus virtual y por correo, conserva cada evaluación enviada y publica los resultados al cierre. Los resultados se separan por grado y se pueden exportar a PDF o Excel. La integración con el entorno universitario se plantea como una simulación. [Minuta de la sesión 01](documentos/sesiones/sesion01.md#notas-de-la-sesión-del-26-10-2026)
 
+## Explorar la documentación
+
+| Sesiones con el cliente | Modelo del dominio | Actores y casos de uso |
+| :--- | :--- | :--- |
+| Preguntas, minuta y cuestionario de la primera reunión. | Conceptos, glosario, escenarios y reglas trazadas a la minuta. | Catálogo de negocio, refactor v3 y diagramas de contexto. |
+| <a href="documentos/sesiones/README.md"><img src="documentos/recursos/sesiones.svg" alt="Sesiones" height="32"></a> | <a href="documentos/modelos/README.md"><img src="documentos/recursos/modelo.svg" alt="Dominio" height="32"></a> | <a href="documentos/casos-uso/README.md"><img src="documentos/recursos/casos.svg" alt="Casos de uso" height="32"></a> |
+
+**Ruta de lectura:** minuta → modelo del dominio y reglas → actores y casos de uso. Las decisiones propuestas se distinguen de lo confirmado por el cliente.
+
 ## Estado de los entregables
 
-Estado tras la primera sesión con el cliente, celebrada el **26/10/2026**. La tabla recoge qué se ha documentado en la rama base y qué queda por preparar o validar.
+Estado documental tras la sesión 01 y la integración del refactor del issue #22 en `develop`. La integración en Git no implica validación del cliente.
 
-| Entregable                   | Estado                                                | Evidencia o seguimiento                                                                                                                                                                                        |
-| :--------------------------- | :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Minuta de la sesión 01       | Documentada                                           | [Minuta y cuestionario](documentos/sesiones/sesion01.md) · [Issue #10](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/10)                                                                                |
-| Modelo del dominio v3        | Documentado, pendiente de validación con el cliente   | [Modelo y diagramas](documentos/modelos/README.md) · [Reglas y trazabilidad](documentos/modelos/documentacion/trazabilidad-v3.md) · [Issue #16](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/16)       |
-| Glosario y escenarios        | Documentados como parte del modelo v3                 | [Glosario](documentos/modelos/documentacion/glosario.md) · [Escenarios](documentos/modelos/documentacion/escenarios-v3.md)                                                                                     |
-| Actores y casos de uso       | Identificación inicial documentada, revisión en curso | [Catálogo y diagramas](documentos/casos-uso/README.md) · [Issue #15](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/15) · [Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22)           |
-| Diagramas de contexto        | Pendientes de integración en `develop`                | [Discusión #18](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions/18) · [Rama del issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/tree/refactor/issue-22-refactorizar-actores-y-casos-de-uso) |
-| Priorización de casos de uso | Pendiente                                             | Acordar prioridades con el cliente.                                                                                                                                                                            |
-| Detallado de casos de uso    | Pendiente                                             | Describir los flujos de los casos priorizados.                                                                                                                                                                 |
-| Prototipado de casos de uso  | Pendiente                                             | Preparar vistas para validar los flujos con el cliente.                                                                                                                                                        |
+| Entregable | Estado | Consultar |
+| :--- | :--- | :--- |
+| Minuta de la sesión 01 | Documentada | <a href="documentos/sesiones/sesion01.md"><img src="documentos/recursos/leer.svg" alt="Consultar Minuta de la sesión 01" height="32"></a> |
+| Modelo del dominio v3 | Documentado; pendiente de validación con el cliente | <a href="documentos/modelos/documentacion/dominio-v3.md"><img src="documentos/recursos/leer.svg" alt="Consultar Modelo del dominio v3" height="32"></a> |
+| Glosario y escenarios | Documentados como parte del modelo v3 | <a href="documentos/modelos/README.md#orden-de-lectura"><img src="documentos/recursos/leer.svg" alt="Consultar Glosario y escenarios" height="32"></a> |
+| Reglas y decisiones | Trazadas a la minuta; supuestos identificados | <a href="documentos/modelos/documentacion/trazabilidad-v3.md"><img src="documentos/recursos/leer.svg" alt="Consultar Reglas y decisiones" height="32"></a> |
+| Actores y casos de uso v3 | Refactor integrado; propuestas pendientes de validar | <a href="documentos/casos-uso/documentacion/actores-casos-uso.md#refactor-v3-issue-22"><img src="documentos/recursos/leer.svg" alt="Consultar Actores y casos de uso v3" height="32"></a> |
+| Diagramas de contexto | Gestor y Alumno integrados | <a href="documentos/casos-uso/README.md#diagramas-de-contexto"><img src="documentos/recursos/leer.svg" alt="Consultar Diagramas de contexto" height="32"></a> |
+| Priorización de casos de uso | Pendiente de acordar con el cliente | — |
+| Detallado y criterios de aceptación | Pendientes para los casos priorizados | — |
+| Prototipado de casos de uso | Pendiente para validar los flujos | — |
 
-Las etapas de priorización, detallado y prototipado se describen en la [disciplina de requisitos del temario](https://github.com/mmasias/idsw1/blob/main/temario/00003-disciplinaDeRequisitos.md).
+## Próximos pasos y referencias
+
+La referencia de [Jorgestor (2025–2026)](https://github.com/martinlopez7/25-26-IdSw1-SdR) incluye priorización, detallado y prototipos. Aquí quedan como trabajo posterior a la identificación inicial y a la aclaración de dudas con el cliente, siguiendo las actividades del [temario de requisitos](https://github.com/mmasias/idsw1/blob/main/temario/00003-disciplinaDeRequisitos.md).
+
+Antes de avanzar, conviene confirmar los roles de Director de grado y Departamento de calidad y las operaciones propuestas de modificación de convocatoria y asignaciones y de cancelación de convocatoria, señalados en el refactor v3. Los escenarios del dominio no sustituyen los criterios de aceptación de cada caso de uso.
+
+Los repositorios de [2025–2026](https://github.com/mmasias/25-26-IdSw1-SdR) y [2024–2025](https://github.com/mmasias/24-25-IdSw1-SdR) sirven de referencia de organización y seguimiento. La [rúbrica de 2025–2026](https://github.com/mmasias/25-26-IdSw1-SdR/blob/main/documents/l'Rubrica.md) valora la trazabilidad mediante issues, commits y referencias cruzadas, sin exigir documentos adicionales. Es una referencia histórica, no una rúbrica confirmada para este curso. El material vigente se consulta en el [repositorio de 2026–2027](https://github.com/mmasias/26-27-idsw1).
 
 ## Equipo
 
@@ -53,33 +85,48 @@ Las etapas de priorización, detallado y prototipado se describen en la [discipl
 .
 ├── README.md
 └── documentos/
-    ├── AI-uso.md
-    ├── CONVENCIONES.md
-    ├── casos-uso/
-    │   ├── README.md
-    │   ├── diagramas/
-    │   └── documentacion/
+    ├── AI-uso.md              Registro central de asistencia con IA
+    ├── CONVENCIONES.md        Acuerdos de trabajo del equipo
+    ├── recursos/             Identidad visual de los README
+    ├── sesiones/             Minuta y cuestionario de la sesión 01
     ├── modelos/
-    │   ├── README.md
-    │   ├── diagramas/
-    │   │   ├── actividad/
-    │   │   ├── clases/
-    │   │   └── objetos/
-    │   ├── documentacion/
-    │   ├── historico/
-    │   │   ├── v1/
-    │   │   └── v2/
-    │   └── seguimiento/
-    └── sesiones/
-        ├── README.md
-        └── sesion01.md
+    │   ├── documentacion/    Dominio v3, glosario, escenarios y reglas
+    │   ├── diagramas/        Clases, objetos y actividad (PUML + SVG)
+    │   ├── historico/        Versiones v1 y v2
+    │   └── seguimiento/      Evolución y acceso al registro central de IA
+    └── casos-uso/
+        ├── documentacion/    Catálogo v2 y refactor v3
+        ├── diagramas/        Actores y contextos (PUML + SVG)
+        └── historico/        Versiones v1 y v2
 ```
 
 ## Flujo de trabajo
 
-1. Registrar la tarea en un [issue](https://github.com/Raultascon/26-27-IdSw1-SDR/issues). Usar [Discussions](https://github.com/Raultascon/26-27-IdSw1-SDR/discussions) para debatir propuestas y enlazar las decisiones relevantes desde el issue.
-2. Crear una rama por issue a partir de `develop`, con el patrón `tipo/issue-N-descripcion`. Referenciar el issue en cada commit con `[refs #N]`.
-3. Abrir un pull request hacia `develop` y obtener al menos una aprobación de otro integrante antes de integrar. `main` recibe cambios desde `develop` mediante pull request.
-4. Enlazar la minuta en los artefactos que deriven de la reunión y registrar el uso de IA cuando corresponda.
+1. Registrar cada tarea en un issue y enlazar las decisiones debatidas en Discussions.
+2. Trabajar en una rama por issue desde `develop`: `tipo/issue-N-descripcion`. Referenciar el issue en los commits con `[refs #N]`.
+3. Revisar mediante pull request hacia `develop`, con al menos una aprobación de otro integrante. Integrar en `main` mediante pull request desde `develop`.
+4. Vincular los artefactos a la minuta y registrar la asistencia con IA y su revisión humana.
 
-[Convenciones del equipo](documentos/CONVENCIONES.md) · [Materiales del curso 2026–2027](https://github.com/mmasias/26-27-idsw1) · [Volver arriba](#encuestas-de-evaluación-docente)
+<p>
+<a href="https://github.com/Raultascon/26-27-IdSw1-SDR/issues"><img src="documentos/recursos/issues.svg" alt="Issues" height="32"></a>
+<a href="https://github.com/Raultascon/26-27-IdSw1-SDR/discussions"><img src="documentos/recursos/debate.svg" alt="Discussions" height="32"></a>
+<a href="documentos/CONVENCIONES.md"><img src="documentos/recursos/normas.svg" alt="Convenciones" height="32"></a>
+</p>
+
+<details>
+<summary>Identidad visual y procedencia</summary>
+
+Paleta inspirada en las capturas de Panal aportadas por el equipo: azul `#0086C9`, pizarra `#2C3540`, gris claro `#F3F5F6` y blanco. Los SVG de `documentos/recursos/` son recursos propios de este proyecto académico; la marca de encuesta no es un logotipo oficial de la universidad. La navegación visual y las vistas de diagramas toman como referencia la organización de Jorgestor.
+
+</details>
+
+---
+
+<p align="center">
+<a href="README.md"><img src="documentos/recursos/inicio.svg" alt="Inicio" height="32"></a>
+<a href="documentos/CONVENCIONES.md"><img src="documentos/recursos/normas.svg" alt="Convenciones" height="32"></a>
+<a href="documentos/AI-uso.md"><img src="documentos/recursos/ia.svg" alt="Uso de IA" height="32"></a>
+<a href="#"><img src="documentos/recursos/arriba.svg" alt="Subir" height="32"></a>
+</p>
+
+<p align="center"><sub>Ingeniería del Software I · UNEATLANTICO · 2026–2027</sub></p>

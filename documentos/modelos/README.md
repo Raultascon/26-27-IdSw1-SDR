@@ -1,8 +1,36 @@
+<p align="center">
+  <img src="../../documentos/recursos/cabecera-modelo.svg" alt="Encuestas de evaluación docente · Modelo del dominio · Guía de lectura · UNEATLANTICO" width="1200">
+</p>
+
+<p align="center">
+<a href="../../README.md"><img src="../../documentos/recursos/inicio.svg" alt="Inicio" height="32"></a>
+<a href="../../documentos/sesiones/README.md"><img src="../../documentos/recursos/sesiones.svg" alt="Sesiones" height="32"></a>
+<a href="../../documentos/modelos/README.md"><img src="../../documentos/recursos/modelo.svg" alt="Dominio" height="32"></a>
+<a href="../../documentos/casos-uso/README.md"><img src="../../documentos/recursos/casos.svg" alt="Casos de uso" height="32"></a>
+<a href="../../documentos/modelos/documentacion/glosario.md"><img src="../../documentos/recursos/glosario.svg" alt="Glosario" height="32"></a>
+<a href="../../documentos/AI-uso.md"><img src="../../documentos/recursos/ia.svg" alt="Uso de IA" height="32"></a>
+</p>
+
 # Modelo del dominio · Guía de lectura
 
-[Inicio](../../README.md) · [Sesiones con el cliente](../sesiones/README.md) · [Actores y casos de uso](../casos-uso/README.md)
+El modelo del dominio v3 describe los conceptos y reglas de las encuestas. Está documentado y pendiente de validación con el cliente. Las versiones v1 y v2 se conservan para consulta histórica.
 
-Índice de la documentación del modelo del dominio v3. Puedes empezar por el modelo y consultar el resto según lo necesites; no hace falta leer todos los documentos de principio a fin.
+<details>
+<summary>En esta página</summary>
+
+- <a href="#vista-del-modelo"><img src="../../documentos/recursos/seccion.svg" alt="Ir a Vista del modelo" width="20"></a> Vista del modelo
+- <a href="#organización-de-la-carpeta"><img src="../../documentos/recursos/seccion.svg" alt="Ir a Organización de la carpeta" width="20"></a> Organización de la carpeta
+- <a href="#orden-de-lectura"><img src="../../documentos/recursos/seccion.svg" alt="Ir a Orden de lectura" width="20"></a> Orden de lectura
+- <a href="#ir-directamente-a-lo-que-buscas"><img src="../../documentos/recursos/seccion.svg" alt="Ir a Ir directamente a lo que buscas" width="20"></a> Ir directamente a lo que buscas
+- <a href="#qué-significan-las-referencias"><img src="../../documentos/recursos/seccion.svg" alt="Ir a Qué significan las referencias" width="20"></a> Qué significan las referencias
+
+</details>
+
+## Vista del modelo
+
+<a href="diagramas/clases/clases.svg"><img src="diagramas/clases/clases.svg" alt="Diagrama de clases del modelo del dominio v3; abrir para ampliar" width="1000"></a>
+
+<a href="documentacion/dominio-v3.md"><img src="../../documentos/recursos/leer.svg" alt="Leer la explicación del modelo v3" height="32"></a> <a href="diagramas/clases/clases.svg"><img src="../../documentos/recursos/imagen.svg" alt="Ampliar el diagrama de clases" height="32"></a> <a href="diagramas/clases/clases.puml"><img src="../../documentos/recursos/codigo.svg" alt="Abrir fuente PlantUML de clases" height="32"></a>
 
 ## Organización de la carpeta
 
@@ -14,7 +42,7 @@ modelos/
 │   ├── clases/
 │   ├── objetos/
 │   └── actividad/
-├── seguimiento/              Evolución del modelo y registro de uso de IA
+├── seguimiento/              Evolución del modelo y acceso al registro central de IA
 └── historico/                Versiones anteriores, conservadas sin cambios
     ├── v1/
     └── v2/
@@ -24,14 +52,14 @@ La propuesta actual se consulta en `documentacion/` y `diagramas/`. La comparaci
 
 ## Orden de lectura
 
-| Paso  | Documento                                                | Para qué leerlo                                                                                   |
-| ----- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 1     | [Modelo del dominio v3](documentacion/dominio-v3.md)     | Entender las clases, sus relaciones y cómo se envía una evaluación. Es el documento principal.    |
-| 2     | [Glosario](documentacion/glosario.md)                    | Consultar qué significa cada concepto, especialmente Docencia, AsignacionEvaluacion y Evaluacion. |
-| 3     | [Escenarios con objetos](documentacion/escenarios-v3.md) | Ver dos ejemplos concretos: una sustitución y respuestas separadas por grado.                     |
-| 4     | [Reglas y decisiones](documentacion/trazabilidad-v3.md)  | Comprobar de dónde sale cada regla y cómo se representa en el modelo.                             |
-| 5     | [Evolución y referencias](seguimiento/evolucion.md)      | Entender qué cambia respecto a v1/v2 y qué aportan los trabajos anteriores.                       |
-| 6     | [Uso de IA](seguimiento/AI-uso.md)                       | Consultar el registro de asistencia con IA, incluida la entrada de v3.                            |
+| Paso | Documento | Para qué leerlo | Acceso |
+| :--- | :--- | :--- | :--- |
+| 1 | Modelo del dominio v3 | Entender las clases, sus relaciones y cómo se envía una evaluación. Es el documento principal. | <a href="documentacion/dominio-v3.md"><img src="../../documentos/recursos/leer.svg" alt="Leer Modelo del dominio v3" height="32"></a> |
+| 2 | Glosario | Consultar qué significa cada concepto, especialmente Docencia, AsignacionEvaluacion y Evaluacion. | <a href="documentacion/glosario.md"><img src="../../documentos/recursos/leer.svg" alt="Leer Glosario" height="32"></a> |
+| 3 | Escenarios con objetos | Ver dos ejemplos concretos: una sustitución y respuestas separadas por grado. | <a href="documentacion/escenarios-v3.md"><img src="../../documentos/recursos/leer.svg" alt="Leer Escenarios con objetos" height="32"></a> |
+| 4 | Reglas y decisiones | Comprobar de dónde sale cada regla y cómo se representa en el modelo. | <a href="documentacion/trazabilidad-v3.md"><img src="../../documentos/recursos/leer.svg" alt="Leer Reglas y decisiones" height="32"></a> |
+| 5 | Evolución y referencias | Entender qué cambia respecto a v1/v2 y qué aportan los trabajos anteriores. | <a href="seguimiento/evolucion.md"><img src="../../documentos/recursos/leer.svg" alt="Leer Evolución y referencias" height="32"></a> |
+| 6 | Uso de IA | Consultar el registro de asistencia con IA, incluida la entrada de v3. | <a href="../AI-uso.md#modelo-del-dominio-v3"><img src="../../documentos/recursos/leer.svg" alt="Leer Uso de IA" height="32"></a> |
 
 Para una primera revisión visual, lee **Modelo → Escenarios** y abre el glosario cuando aparezca un término poco claro. Para revisar la justificación, continúa con **Reglas y decisiones → Evolución**.
 
@@ -64,4 +92,11 @@ Los documentos de v3 tienen enlaces de navegación al principio y al final. Los 
 
 ---
 
-[Empezar por el modelo →](documentacion/dominio-v3.md) · [Volver arriba](#modelo-del-dominio--guía-de-lectura)
+<p align="center">
+<a href="../../README.md"><img src="../../documentos/recursos/inicio.svg" alt="Inicio" height="32"></a>
+<a href="../../documentos/CONVENCIONES.md"><img src="../../documentos/recursos/normas.svg" alt="Convenciones" height="32"></a>
+<a href="../../documentos/AI-uso.md"><img src="../../documentos/recursos/ia.svg" alt="Uso de IA" height="32"></a>
+<a href="#"><img src="../../documentos/recursos/arriba.svg" alt="Subir" height="32"></a>
+</p>
+
+<p align="center"><sub>Ingeniería del Software I · UNEATLANTICO · 2026–2027</sub></p>
