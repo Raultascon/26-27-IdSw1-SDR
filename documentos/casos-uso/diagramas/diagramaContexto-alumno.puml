@@ -1,0 +1,12 @@
+@startuml diagramaContexto-alumno
+hide empty description
+
+state "SISTEMA_DISPONIBLE" as Disponible
+state "ASIGNACIONES_MOSTRADAS" as Asignaciones
+
+[*] --> Disponible
+
+Disponible --> Asignaciones : consultarAsignaciones()
+Asignaciones --> Asignaciones : responderEvaluacion()\n[asignación pendiente]
+Asignaciones --> Disponible
+@enduml

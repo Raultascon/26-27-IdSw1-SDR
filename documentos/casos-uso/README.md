@@ -16,4 +16,5 @@ casos-uso/
 
 - [Actores y casos de uso · v3](documentacion/actores-casos-uso.md): identificación de los actores externos, actor abstracto ConsultorResultados para los roles de consulta, catálogo de casos de uso a nivel de negocio y trazabilidad con el [Modelo del dominio v3](../modelos/documentacion/dominio-v3.md).
 - [Diagrama de actores y casos de uso · v3 (SVG)](diagramas/actoresCasosUso.svg) · [Fuente PlantUML](diagramas/actoresCasosUso.puml).
+- Diagramas de contexto: [Gestor](diagramas/diagramaContexto-gestor.svg) · [Alumno](diagramas/diagramaContexto-alumno.svg).
 - Histórico: [v1](historico/v1/actoresCasosUso-v1.svg) · [v2](historico/v2/actoresCasosUso-v2.svg).

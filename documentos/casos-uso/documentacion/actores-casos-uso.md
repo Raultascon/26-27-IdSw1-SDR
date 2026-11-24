@@ -72,6 +72,21 @@ Versión vigente (`v3`). Las iteraciones anteriores se conservan en [`historico/
 | `v2` | Director de grado y Departamento de calidad heredan de Profesor. Descartada: la herencia implicaba que ambos eran profesores. | [SVG](../historico/v2/actoresCasosUso-v2.svg) · [PUML](../historico/v2/actoresCasosUso-v2.puml) |
 | `v3` | Actor abstracto ConsultorResultados como rol base de consulta ([Issue #22](https://github.com/Raultascon/26-27-IdSw1-SDR/issues/22)). | Vigente |
 
+## Diagramas de contexto
+
+Relacionan los casos de uso entre sí mediante diagramas de estados: cada estado representa la situación del sistema que percibe el actor y cada transición, el caso de uso que la provoca.
+
+<div align=center>
+
+| Gestor · ciclo de vida de la convocatoria | Alumno |
+| :-: | :-: |
+| ![Diagrama de contexto del Gestor](../diagramas/diagramaContexto-gestor.svg) | ![Diagrama de contexto del Alumno](../diagramas/diagramaContexto-alumno.svg) |
+| [diagramaContexto-gestor.puml](../diagramas/diagramaContexto-gestor.puml) | [diagramaContexto-alumno.puml](../diagramas/diagramaContexto-alumno.puml) |
+
+</div>
+
+Las transiciones marcadas con `<<Tiempo>>` las dispara el actor Tiempo según las fechas de la convocatoria; se incluyen en el diagrama del Gestor porque determinan qué casos de uso tiene disponibles en cada momento.
+
 ## Catálogo de casos de uso
 
 ### Resumen por actor
