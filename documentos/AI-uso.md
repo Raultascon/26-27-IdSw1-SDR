@@ -37,16 +37,16 @@
 - **Fecha:** 2026-11-23 a 2026-11-24
 - **Resumen:** Revisión del PR #19 contrastada con la minuta de la sesión 01 y los apuntes de la asignatura, redacción del mensaje de Discussions y aplicación del refactor en la rama `refactor/issue-22-refactorizar-actores-y-casos-de-uso`.
 - **Commits asociados:**
-  - `1991bab` (`refactor(cu): unifica diagrama y añade actor abstracto ConsultorResultados [refs #22]`)
-  - `69b6980` (`fix(cu): asocia consulta y exportación de resultados al Gestor [refs #22]`)
-  - `dc9cd3d` (`feat(cu): añade Campus Virtual y Servidor de correo como actores secundarios [refs #22]`)
-  - `3e70391` (`feat(cu): añade casos de uso de gestión de convocatoria y asignaciones [refs #22]`)
-  - `65cf1f0` (`feat(cu): añade diagramas de contexto del Gestor y del Alumno [refs #22]`)
-  - `ec75850` (`docs(cu): añade glosario de actores y casos de uso [refs #22]`)
-  - `b81cfc5` (`docs(cu): registra la revisión v3 en la información del artefacto [refs #22]`)
-  - `901cb76` (`refactor(cu): retira Servidor de correo como actor secundario [refs #22]`)
-  - `9a6cfda` (`feat(cu): exporta diagramas v3 y de contexto a SVG [refs #22]`)
-  - `666ac0f` (`fix(cu): corrige enlace roto al modelo del dominio v3 [refs #22]`)
+  - `d87b04b` (`refactor(cu): unifica diagrama y añade actor abstracto ConsultorResultados [refs #22]`)
+  - `5e3b9d5` (`fix(cu): asocia consulta y exportación de resultados al Gestor [refs #22]`)
+  - `653e87e` (`feat(cu): añade Campus Virtual y Servidor de correo como actores secundarios [refs #22]`)
+  - `f522d34` (`feat(cu): añade casos de uso de gestión de convocatoria y asignaciones [refs #22]`)
+  - `2dac07b` (`feat(cu): añade diagramas de contexto del Gestor y del Alumno [refs #22]`)
+  - `e6ecbe0` (`docs(cu): añade glosario de actores y casos de uso [refs #22]`)
+  - `f65f73c` (`docs(cu): registra la revisión v3 en la información del artefacto [refs #22]`)
+  - `b7fa992` (`refactor(cu): retira Servidor de correo como actor secundario [refs #22]`)
+  - `ab412c1` (`feat(cu): exporta diagramas v3 y de contexto a SVG [refs #22]`)
+  - `3b4257f` (`fix(cu): corrige enlace roto al modelo del dominio v3 [refs #22]`)
 
 ## Validación Humana
 
