@@ -1,36 +1,8 @@
-# Declaración de Uso de IA
+# Registro de IA del modelo del dominio
 
-[Índice del modelo](../README.md) · [← Evolución](evolucion.md)
+El registro se ha centralizado en [documentos/AI-uso.md](../../AI-uso.md), junto con las declaraciones de casos de uso y documentación.
 
-## Herramientas Utilizadas
-- **Herramientas:** Google Gemini (v1) y Codex (v3).
-- **Fechas:** Noviembre 2026
+- [Modelo del dominio v1: Gemini · 05/11/2026](../../AI-uso.md#modelo-del-dominio-v1).
+- [Modelo del dominio v3: Codex · 20/11/2026](../../AI-uso.md#modelo-del-dominio-v3).
 
-## Contexto de Uso por Artefacto
-
-### Modelo del Dominio (v1)
-- **¿Se usó?:** Sí
-- **Propósito:** Asistencia técnica en la sintaxis de PlantUML para representar el diagrama de clases del modelo del dominio a partir de las entidades, atributos y relaciones conceptuales identificadas.
-- **Evaluación crítica:** La IA propuso una estructuración básica en PlantUML. Se revisó y adaptó manualmente la jerarquía de herencia, las asociaciones y la nomenclatura para asegurar que se respetara estrictamente el lenguaje del cliente y el formato de clases conceptuales de la asignatura.
-
-## Trazabilidad de Conversaciones
-
-### Conversación 1: Transcripción a sintaxis PlantUML del Modelo del Dominio
-- **URL:** https://share.gemini.google/6Pxj8vXCknue
-- **Fecha:** 2026-11-05
-- **Resumen:** Se utilizó la sesión para traducir a código PlantUML las clases conceptuales, atributos lógicos y relaciones previamente acordadas en el glosario. Se realizaron ajustes en la distribución de las conexiones para optimizar la legibilidad del diagrama.
-- **Commits asociados:** [`aa93fa7`](https://github.com/Raultascon/26-27-IdSw1-SDR/commit/aa93fa78f59a17c95670d932ddb26ebf58cecece)
-
-## Validación Humana
-
-- **Mecanismos de validación:** Se contrastó la estructura del diagrama generado en PlantUML contra los apuntes de la asignatura (verificando la ausencia de tipos de datos técnicos de programación o atributos propios de bases de datos) y contra los requerimientos establecidos en la toma de notas.
-- **Errores detectados:** Se corrigieron dependencias y asociaciones innecesarias sugeridas en el borrador inicial, conservando únicamente las clases conceptuales, enumerados y relaciones esenciales del dominio.
-
-## Modelo del dominio (v3) · 20/11/2026
-
-- **Herramienta:** Codex.
-- **Uso:** Obtener el código PUML, revisar posibles errores y proponer mejoras a la versión del modelo del dominio; ayudar a redactar los archivos Markdown, revisar la documentación y añadir enlaces y vínculos entre documentos y referencias.
-
----
-
-[Índice del modelo](../README.md) · [← Evolución](evolucion.md) · [Volver arriba](#declaración-de-uso-de-ia)
+Esta página conserva los enlaces desde la documentación del modelo. Las nuevas entradas se añaden al registro central.
