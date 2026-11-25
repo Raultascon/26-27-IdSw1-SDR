@@ -1,0 +1,173 @@
+@startuml
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+' ========================================================
+' MODELO DEL DOMINIO v2
+' Convención de composición/agregación: el TODO va a la
+' izquierda ("Todo *-- Parte"), así el rombo queda en el todo.
+' ========================================================
+
+' ---------------- Marco académico ----------------
+
+class Carrera {
+ nombre
+}
+
+class Asignatura {
+ nombre
+ código
+}
+
+class Semestre {
+ periodo
+ añoAcadémico
+}
+
+class CalendarioEvaluacion {
+ semanaLanzamiento
+ plazoRespuesta
+}
+
+' ---------------- Personas ----------------
+
+abstract class Estudiante {
+ nombre
+ apellidos
+}
+
+class EstudianteOrdinario
+class EstudianteErasmus
+
+abstract class Profesor {
+ nombre
+ apellidos
+}
+
+class ProfesorFijo
+class ProfesorTemporal
+
+class Administrador {
+ nombre
+}
+
+' ---------------- Cuestionario ----------------
+
+class PlantillaCuestionario
+
+class ItemObligatorio {
+ númeroPregunta
+ enunciado
+}
+
+class PreguntaDeDesarrollo {
+ enunciado
+}
+
+enum EscalaValoracion {
+ 1 Muy en desacuerdo
+ 2 En desacuerdo
+ 3 Neutral
+ 4 De acuerdo
+ 5 Muy de acuerdo
+}
+
+' ---------------- Encuesta y respuestas ----------------
+
+class Notificacion {
+ mensaje
+}
+
+class EncuestaSemestral
+
+class EvaluacionDocente
+
+class ValoracionEscala
+
+class ComentarioOpcional {
+ textoLibre
+}
+
+' ---------------- Resultados ----------------
+
+class ResumenDocente {
+ númeroValoraciones
+ mediaGlobal
+}
+
+class MediaPorItem {
+ valorMedia
+}
+
+class ResumenGlobalAdmin
+
+' ========================================================
+' JERARQUÍAS
+' ========================================================
+
+Estudiante <|-- EstudianteOrdinario
+Estudiante <|-- EstudianteErasmus
+Profesor <|-- ProfesorFijo
+Profesor <|-- ProfesorTemporal
+
+note bottom of EstudianteErasmus
+ No recibe la encuesta
+end note
+
+' ========================================================
+' MARCO ACADÉMICO
+' ========================================================
+
+Estudiante "*" -- "1" Carrera : estudia
+Estudiante "*" -- "1..*" Asignatura : cursa
+Asignatura "*" -- "1..*" Carrera : forma parte de
+Profesor "1..*" -- "1..*" Asignatura : imparte
+ProfesorTemporal "0..*" -- "1" ProfesorFijo : sustituye a
+Semestre "1" -- "*" Asignatura : organiza
+Semestre "1" *-- "1" CalendarioEvaluacion : tiene
+Administrador "1" -- "*" CalendarioEvaluacion : fija fechas de
+
+' ========================================================
+' CUESTIONARIO
+' ========================================================
+
+PlantillaCuestionario "1" *-- "11" ItemObligatorio : contiene
+PlantillaCuestionario "1" *-- "1" PreguntaDeDesarrollo : contiene
+
+' ========================================================
+' ENCUESTA Y RESPUESTAS
+' ========================================================
+
+Semestre "1" -- "*" EncuestaSemestral : se lanza en
+EncuestaSemestral "*" -- "1" PlantillaCuestionario : sigue
+EstudianteOrdinario "1" -- "*" EncuestaSemestral : recibe
+Notificacion "1..*" -- "1" EncuestaSemestral : avisa de
+
+EncuestaSemestral "1" *-- "1..*" EvaluacionDocente : contiene
+EvaluacionDocente "*" -- "1" Profesor : evalúa a
+EvaluacionDocente "*" -- "1" Asignatura : corresponde a
+
+EvaluacionDocente "1" *-- "11" ValoracionEscala : contiene
+EvaluacionDocente "1" *-- "0..1" ComentarioOpcional : contiene
+ValoracionEscala "*" -- "1" ItemObligatorio : responde a
+ValoracionEscala "*" -- "1" EscalaValoracion : puntúa con
+ComentarioOpcional "*" -- "1" PreguntaDeDesarrollo : responde a
+
+' ========================================================
+' RESULTADOS
+' ========================================================
+
+ResumenDocente "1" -- "*" EvaluacionDocente : se calcula a partir de
+ResumenDocente "*" -- "1" Profesor : resume a
+ResumenDocente "*" -- "1" Asignatura : de
+ResumenDocente "*" -- "1" Carrera : desglosado por
+ResumenDocente "*" -- "1" Semestre : de
+ResumenDocente "1" *-- "11" MediaPorItem : contiene
+MediaPorItem "*" -- "1" ItemObligatorio : de
+
+Administrador "1" -- "*" ResumenGlobalAdmin : consulta
+ResumenGlobalAdmin "*" -- "1" Semestre : de
+ResumenGlobalAdmin "1" o-- "*" ResumenDocente : agrupa
+
+@enduml

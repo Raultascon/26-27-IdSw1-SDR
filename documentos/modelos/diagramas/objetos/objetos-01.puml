@@ -1,0 +1,61 @@
+@startuml
+title E-01 · Un profesor en dos asignaturas y una sustitución
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 14
+skinparam objectBackgroundColor #EEF4FA
+skinparam objectBorderColor #486581
+skinparam nodesep 40
+skinparam ranksep 45
+top to bottom direction
+object "alumna : Estudiante" as alumna {
+  esErasmus = falso
+}
+object "ana : Profesor" as ana {
+  nombre = "Ana (ficticio)"
+}
+object "luis : Profesor" as luis {
+  nombre = "Luis (ficticio)"
+}
+object "programacion : Asignatura" as prog {
+  nombre = "Programación"
+}
+object "bases : Asignatura" as bases {
+  nombre = "Bases de datos"
+}
+object "anaProg : Docencia" as d1
+object "anaBases : Docencia" as d2
+object "luisProg : Docencia" as d3
+object "asigAnaProg : AsignacionEvaluacion" as a1 {
+  estadoEnvio = enviada
+}
+object "asigAnaBases : AsignacionEvaluacion" as a2 {
+  estadoEnvio = pendiente
+}
+object "asigLuisProg : AsignacionEvaluacion" as a3 {
+  estadoEnvio = pendiente
+}
+ana -- d1 : imparte
+ana -- d2 : imparte
+luis -- d3 : imparte
+prog -- d1 : se concreta en
+prog -- d3 : se concreta en
+bases -- d2 : se concreta en
+alumna -- d1 : recibe enseñanza en
+alumna -- d2 : recibe enseñanza en
+alumna -- d3 : recibe enseñanza en
+alumna -- a1 : tiene
+alumna -- a2 : tiene
+alumna -- a3 : tiene
+d1 -- a1 : es objeto de
+d2 -- a2 : es objeto de
+d3 -- a3 : es objeto de
+legend bottom
+  Vista parcial de participación; datos ficticios.
+  Las tres docencias corresponden al grado Informática y al semestre 1 de 2026/27.
+  Se omiten esos dos objetos compartidos y la convocatoria para facilitar la lectura.
+  Luis sustituyó a Ana en Programación; se conserva la docencia de ambos.
+  No se muestra ni se identifica el contenido enviado por la alumna.
+endlegend
+@enduml

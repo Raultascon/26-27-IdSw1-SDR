@@ -1,0 +1,56 @@
+@startuml actoresCasosUso
+left to right direction
+
+actor "Gestor (ordenación académica)" as Gestor
+actor "Alumno" as Alumno
+actor "Tiempo" as Tiempo
+
+rectangle "Sistema de Encuestas de Evaluación Docente" {
+  usecase configurarCuestionario as "configurarCuestionario()"
+  usecase prepararConvocatoria as "prepararConvocatoria()"
+  usecase modificarConvocatoria as "modificarConvocatoria()"
+  usecase cancelarConvocatoria as "cancelarConvocatoria()"
+  usecase modificarAsignaciones as "modificarAsignaciones()"
+  usecase consultarParticipacion as "consultarParticipacion()"
+  usecase consultarAsignaciones as "consultarAsignaciones()"
+  usecase responderEvaluacion as "responderEvaluacion()"
+  usecase abrirConvocatoria as "abrirConvocatoria()"
+  usecase enviarRecordatorios as "enviarRecordatorios()"
+  usecase cerrarConvocatoria as "cerrarConvocatoria()"
+  usecase consultarResultados as "consultarResultados()"
+  usecase exportarResultados as "exportarResultados()"
+}
+
+actor "ConsultorResultados" as ConsultorResultados <<abstracto>>
+actor "Profesor" as Profesor
+actor "Director de grado" as DirectorGrado
+actor "Departamento de calidad" as Calidad
+
+actor "Campus Virtual / Panal" as CampusVirtual <<sistema>>
+
+Gestor --> configurarCuestionario
+Gestor --> prepararConvocatoria
+Gestor --> modificarConvocatoria
+Gestor --> cancelarConvocatoria
+Gestor --> modificarAsignaciones
+Gestor --> consultarParticipacion
+
+Alumno --> consultarAsignaciones
+Alumno --> responderEvaluacion
+
+Tiempo --> abrirConvocatoria
+Tiempo --> enviarRecordatorios
+Tiempo --> cerrarConvocatoria
+
+consultarResultados <-- ConsultorResultados
+exportarResultados <-- ConsultorResultados
+
+ConsultorResultados <|-- Profesor
+ConsultorResultados <|-- DirectorGrado
+ConsultorResultados <|-- Calidad
+ConsultorResultados <|-- Gestor
+
+prepararConvocatoria --> CampusVirtual
+abrirConvocatoria --> CampusVirtual
+enviarRecordatorios --> CampusVirtual
+@enduml
