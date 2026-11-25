@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-labelledby="title desc">
+<title id="title">Encuestas de · evaluación docente</title>
+<desc id="desc">Proyecto académico de UNEATLANTICO. Identidad visual inspirada en Panal.</desc>
+<rect width="1200" height="280" rx="12" fill="#F3F5F6"/>
+<path d="M850 0h338a12 12 0 0 1 12 12v256a12 12 0 0 1-12 12H790Z" fill="#2C3540"/>
+<g fill="none" stroke="#56616C" stroke-width="1.4" opacity=".55"><path d="m1100-25 80 46v92l-80 46-80-46V21Zm-80 138 80 46v92l-80 46-80-46v-92Zm160 0 80 46v92l-80 46-80-46v-92Z"/></g>
+<path d="M0 268h790l-3 12H12a12 12 0 0 1-12-12" fill="#0086C9"/>
+<text x="44" y="46" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#5C6670">INGENIERÍA DEL SOFTWARE I · 2026 / 2027</text>
+<text x="42" y="111" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="700" fill="#2C3540">Encuestas de</text>
+<text x="42" y="169" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="700" fill="#0086C9">evaluación docente</text>
+<text x="44" y="232" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#5C6670">Universidad Europea del Atlántico</text>
+<g transform="translate(900 48) scale(1.25)"><path d="M60 4 109 32v56L60 116 11 88V32Z" fill="#0086C9"/>
+<g fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="37" y="29" width="46" height="62" rx="5"/><path d="m45 46 4 4 7-8m7 5h12m-30 15 4 4 7-8m7 5h12m-30 15 4 4 7-8m7 5h12"/></g></g>
+<text x="975" y="234" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#FFFFFF">PROYECTO DE REQUISITADO</text>
+</svg>

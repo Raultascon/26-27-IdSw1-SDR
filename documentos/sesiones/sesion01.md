@@ -1,5 +1,7 @@
 # Preguntas de la 1.ª reunión con el cliente (26/10/2026)
 
+[Índice de sesiones](README.md) · [Notas de la reunión](#notas-de-la-sesión-del-26-10-2026) · [Ítems del cuestionario](#detalle-de-los-ítems-del-cuestionario)
+
 ## 1. Que el cliente nos ponga en contexto (descubrir el proyecto)
 - ¿A qué se dedica?
 - ¿Qué es lo que quieres plantear?
@@ -67,20 +69,20 @@
 > - **Ítems 1 al 11**: Obligatorios, con respuesta numérica en escala de **1 a 5**.
 > - **Observaciones**: Campo abierto (texto libre), de carácter **opcional**.
 
-| N.º | Enunciado de la pregunta / ítem | Tipo de respuesta | Obligatoriedad |
-| :-: | :--- | :-: | :-: |
-| **1** | La aportación académica y profesional del profesor a la asignatura ha sido: | Numérica (1-5) | **Obligatoria** |
-| **2** | La presentación y actualización del material didáctico ha sido: | Numérica (1-5) | **Obligatoria** |
-| **3** | Las clases del profesor eran fáciles de seguir e instructivas: | Numérica (1-5) | **Obligatoria** |
-| **4** | Se ha dispuesto de los medios necesarios para la asignatura: | Numérica (1-5) | **Obligatoria** |
-| **5** | El profesor motiva a los alumnos a aprender y profundizar en el conocimiento de la asignatura: | Numérica (1-5) | **Obligatoria** |
-| **6** | La eficacia con la que el profesor ha manejado los debates ha sido: | Numérica (1-5) | **Obligatoria** |
-| **7** | Las tareas asignadas por el profesor, ¿han sido eficaces para tu aprendizaje de la materia?: | Numérica (1-5) | **Obligatoria** |
-| **8** | El tiempo disponible para el aprendizaje de la asignatura es proporcional al volumen de contenidos y tareas que comprende: | Numérica (1-5) | **Obligatoria** |
-| **9** | El profesor se muestra accesible y atiende las consultas en tutorías: | Numérica (1-5) | **Obligatoria** |
-| **10** | Valora cuánto has aprendido en este curso: | Numérica (1-5) | **Obligatoria** |
-| **11** | Valoración global del profesor: | Numérica (1-5) | **Obligatoria** |
-| **—** | **Observaciones:** Añade brevemente cualquier otra opinión que quieras manifestar en relación con la actividad docente de este profesor en esta asignatura. | Texto abierto | *Opcional* |
+| N.º    | Enunciado de la pregunta / ítem                                                                                                                             | Tipo de respuesta | Obligatoriedad  |
+| :----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------: | :-------------: |
+| **1**  | La aportación académica y profesional del profesor a la asignatura ha sido:                                                                                 | Numérica (1-5)    | **Obligatoria** |
+| **2**  | La presentación y actualización del material didáctico ha sido:                                                                                             | Numérica (1-5)    | **Obligatoria** |
+| **3**  | Las clases del profesor eran fáciles de seguir e instructivas:                                                                                              | Numérica (1-5)    | **Obligatoria** |
+| **4**  | Se ha dispuesto de los medios necesarios para la asignatura:                                                                                                | Numérica (1-5)    | **Obligatoria** |
+| **5**  | El profesor motiva a los alumnos a aprender y profundizar en el conocimiento de la asignatura:                                                              | Numérica (1-5)    | **Obligatoria** |
+| **6**  | La eficacia con la que el profesor ha manejado los debates ha sido:                                                                                         | Numérica (1-5)    | **Obligatoria** |
+| **7**  | Las tareas asignadas por el profesor, ¿han sido eficaces para tu aprendizaje de la materia?:                                                                | Numérica (1-5)    | **Obligatoria** |
+| **8**  | El tiempo disponible para el aprendizaje de la asignatura es proporcional al volumen de contenidos y tareas que comprende:                                  | Numérica (1-5)    | **Obligatoria** |
+| **9**  | El profesor se muestra accesible y atiende las consultas en tutorías:                                                                                       | Numérica (1-5)    | **Obligatoria** |
+| **10** | Valora cuánto has aprendido en este curso:                                                                                                                  | Numérica (1-5)    | **Obligatoria** |
+| **11** | Valoración global del profesor:                                                                                                                             | Numérica (1-5)    | **Obligatoria** |
+| **—**  | **Observaciones:** Añade brevemente cualquier otra opinión que quieras manifestar en relación con la actividad docente de este profesor en esta asignatura. | Texto abierto     | *Opcional*      |
 
 ## 4. Calendario, lanzamiento y notificaciones
 - 1 convocatoria por semestre.

@@ -1,205 +1,124 @@
-# Convenciones de Trabajo en GitHub
+# Convenciones de trabajo en GitHub
 
+[Inicio](../README.md) · [Sesiones con el cliente](sesiones/README.md) · [Registro de IA](AI-uso.md)
 
-Para asegurar un flujo de trabajo eficiente, una trazabilidad clara, todo el equipo debe adherirse a las siguientes convenciones para nombrar y gestionar elementos en GitHub.
+**En esta página**
 
-
----
-
+- [Etiquetas](#1-etiquetas-labels)
+- [Incidencias](#2-incidencias-issues)
+- [Ramas](#3-ramas-branches)
+- [Commits](#4-commits)
+- [Pull requests](#5-pull-requests-prs)
+- [Registro de uso de IA](#6-registro-de-uso-de-ia-ai-usomd)
 
 ## 1. Etiquetas (Labels)
 
-
-Las etiquetas permiten categorizar y filtrar rápidamente las incidencias (Issues). Se emplearán las siguientes etiquetas estandarizadas:
-
-
-| Etiqueta | Descripción |
-| :--- | :--- |
-| `bug` | Error o inconsistencia en un artefacto existente que debe ser corregido. |
-| `casoDeUso` | Tareas relacionadas con Casos de Uso (diagramas, fichas, prototipos, etc.). |
-| `documentation` | Tareas de documentación general: minutas, README, o el archivo `AI-uso.md`. |
-| `duda` | Preguntas dirigidas explícitamente al cliente para aclarar requisitos. |
-| `modeloDominio` | Tareas vinculadas al Modelo del Dominio (diagrama de clases, glosario, etc.). |
-| `tarea-interna` | Tareas organizativas o técnicas del equipo que no requieren interacción con el cliente. |
-| `validación-cliente` | Solicitudes formales al cliente para la revisión y aprobación de entregables. |
-
-
----
-
+| Etiqueta             | Descripción                                                         |
+| :------------------- | :------------------------------------------------------------------ |
+| `bug`                | Error o inconsistencia en un artefacto existente.                   |
+| `casoDeUso`          | Actores, casos de uso, diagramas, fichas o prototipos.              |
+| `documentation`      | Minutas, guías de lectura o registro de IA.                         |
+| `duda`               | Pregunta al cliente para aclarar requisitos.                        |
+| `modeloDominio`      | Modelo del dominio, diagramas o glosario.                           |
+| `tarea-interna`      | Trabajo del equipo que no requiere interacción con el cliente.      |
+| `validación-cliente` | Solicitud de revisión o aprobación de un entregable por el cliente. |
 
 ## 2. Incidencias (Issues)
 
+Cada tarea, duda o error se registra en un issue antes de trabajar. Cuando una propuesta nace en Discussions, el issue enlaza la conversación que explica la decisión.
 
-Los Issues son el motor de nuestra trazabilidad. Toda tarea, duda o error debe estar registrada en un Issue antes de escribir código o documentación.
+### 2.1. Título del issue
 
+| Prefijo        | Formato                                                                  | Etiquetas habituales                  |
+| :------------- | :----------------------------------------------------------------------- | :------------------------------------ |
+| `[Duda]`       | Pregunta concreta, como «¿Quién consulta los resultados tras el cierre?» | `duda`                                |
+| `[Validación]` | Artefacto y versión, como «Modelo del dominio v3»                        | `validación-cliente`, `modeloDominio` |
+| `[Tarea]`      | Acción y alcance, como «Refinar la minuta de la sesión 01»               | `tarea-interna`, `documentation`      |
+| `[Bug]`        | Inconsistencia observada, como «Enlace roto a la minuta»                 | `bug`, `documentation`                |
 
-### 2.1. Título del Issue
+### 2.2. Cuerpo del issue
 
-
-Se utilizará un prefijo entre corchetes para identificar rápidamente el propósito:
-
-
-* **Para el Cliente (Duda):**
-  * Sintaxis: `[Duda] <Pregunta clara y concisa>`
-  * Ejemplo: `[Duda] ¿Puede un usuario tener múltiples perfiles de pago vinculados?`
-  * Etiquetas: `duda`
-
-
-* **Para el Cliente (Validación):**
-  * Sintaxis: `[Validación] <Artefacto y versión a validar>`
-  * Ejemplo: `[Validación] v1 del Modelo del Dominio y Glosario`
-  * Etiquetas: `validación-cliente`, `modeloDominio`
-
-
-* **Para el Equipo (Tarea Interna):**
-  * Sintaxis: `[Tarea] <Acción específica a realizar>`
-  * Ejemplo: `[Tarea] Redactar v1 de la ficha del CU-03: Generar Informe`
-  * Etiquetas: `tarea-interna`, `casoDeUso`
-
-
-* **Para Corregir un Error:**
-  * Sintaxis: `[Bug] <Descripción del error>`
-  * Ejemplo: `[Bug] El CU-01 no contempla el caso de usuario ya existente`
-  * Etiquetas: `bug`, `casoDeUso`
-
-
-### 2.2. Cuerpo del Issue
-
-
-* **Issues dirigidos al cliente:**
-  * Mencionar explícitamente usando su `@usuario-github-del-cliente`.
-  * Contextualizar la consulta vinculando la minuta de la reunión correspondiente.
-  * Ejemplo:
-    > Hola @usuario-del-cliente, en relación con la reunión del 20/03 (ver `/documentos/sesiones/sesion01.md`), nos surge la duda de si un usuario podría tener más de un perfil de pago. ¡Gracias!
-
-
-* **Issues de tareas internas:**
-  * Asignar un único miembro del equipo en `Assignees` como responsable principal.
-  * Describir los entregables esperados (rutas de archivos, diagramas, etc.).
-
-
----
-
+- En una consulta o validación, mencionar al cliente y enlazar el apartado de la minuta que da contexto. [Minuta de la sesión 01](sesiones/sesion01.md)
+- En una tarea interna, identificar al responsable principal en `Assignees` y describir los entregables esperados, con sus rutas cuando existan.
 
 ## 3. Ramas (Branches)
 
+Cada issue tiene una rama de trabajo creada desde `develop`. Los cambios se revisan e integran primero en `develop` y se incorporan a `main` mediante un pull request. Los commits de trabajo se realizan en la rama del issue.
 
-Todo trabajo se desarrollará en ramas independientes partiendo de `main`. **Queda estrictamente prohibido hacer commits directos sobre la rama `main`.**
-Ademas vamos a tener una rama `develop` en la que previamente comprobaremos que todos los añadidos funcionan correctamente y posterior a eso se hace un  merge la develop en la main.
+```text
+tipo/issue-<número>-<descripción-en-kebab-case>
+```
 
+| Tipo       | Uso                                                         |
+| :--------- | :---------------------------------------------------------- |
+| `feat`     | Nueva funcionalidad o primera versión de un artefacto.      |
+| `fix`      | Corrección de un error o inconsistencia.                    |
+| `docs`     | Inclusión o modificación de documentación.                  |
+| `refactor` | Reestructuración que conserva el significado del artefacto. |
+| `chore`    | Mantenimiento del repositorio.                              |
 
-### Formato del Nombre de la Rama:
-
-
-`tipo/issue-<NÚMERO_ISSUE>-<descripcion-corta-en-kebab-case>`
-
-
-* **Tipos permitidos (`tipo`):**
-  * `feat`: Nueva funcionalidad o artefacto inicial (ej. v1 de un CU).
-  * `fix`: Corrección de un error o inconsistencia (`bug`).
-  * `docs`: Inclusión o modificación de documentación (minutas, `AI-uso.md`).
-  * `refactor`: Reestructuración sin alterar semántica (ej. reorganizar carpetas).
-  * `chore`: Mantenimiento del repositorio (configuraciones, ignorados).
-* **`<NÚMERO_ISSUE>`**: Número del Issue de GitHub que esta rama resuelve.
-* **`<descripcion-corta>`**: Resumen breve en minúsculas y separado por guiones.
-
-
-**Ejemplos:**
-* `feat/issue-10-modelo-dominio-v1`
-* `fix/issue-15-cu01-usuario-existente`
-
-
----
-
+El número identifica el issue y la descripción se escribe en minúsculas, con palabras separadas por guiones. Ejemplos del repositorio: `docs/issue-10-refinar-minuta-de-la-sesion-1` y `feat/issue-15-encontrar-actores-y-casos-de-uso`.
 
 ## 4. Commits
 
+```text
+tipo(alcance): <mensaje breve en imperativo> [refs #NÚMERO_ISSUE]
+```
 
-Los mensajes de commit deben cumplir el estándar **Conventional Commits** y garantizar la trazabilidad bidireccional hacia los Issues.
+- Usar los tipos de rama indicados arriba o `style` para cambios de formato.
+- Añadir un alcance cuando ayude a identificar el cambio, por ejemplo `mdd`, `cu`, `cu-01`, `glosario`, `minuta`, `repo` o `ia-uso`.
+- Escribir una acción breve, como `añade` o `corrige`, y usar `[refs #N]` para vincular cada commit a su issue. Las palabras de cierre se reservan para el pull request.
 
+```text
+docs(cu): añade guia de lectura de casos de uso [refs #15]
+docs(ia-uso): registra uso de IA en actores y casos de uso [refs #15]
+```
 
-### Formato del Mensaje:
+## 5. Pull requests (PRs)
 
+### 5.1. Título del PR
 
-`tipo(alcance): <mensaje breve en imperativo> [refs #NÚMERO_ISSUE]`
+```text
+[TIPO_PRINCIPAL] <Título del issue principal>
+```
 
+Ejemplo de título: `[Docs] [Tarea] Refinar la minuta de la sesión 01`.
 
-* **`tipo`**: Igual que los tipos de rama (`feat`, `fix`, `docs`, `style`, `refactor`, `chore`).
-* **`(alcance)`**: Ámbito afectado, opcional pero recomendado (`mdd`, `cu`, `cu-01`, `glosario`, `minuta`, `repo`, `ia-uso`).
-* **`<mensaje>`**: Acción realizada escrita en modo imperativo (ej. "añade", "corrige").
-* **`[refs #NÚMERO_ISSUE]`**: Enlace explícito al Issue de GitHub.
+### 5.2. Reglas de integración
 
+1. **Trazabilidad.** Referenciar el issue en la descripción con `Closes #N` o `Fixes #N`. GitHub aplica el cierre automático cuando el pull request se integra en la rama predeterminada (`main`). En un PR hacia `develop`, la referencia documenta qué issue aborda. [Documentación de GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue)
+2. **Revisión por pares.** Solicitar revisión al resto del equipo y obtener al menos una aprobación explícita de otro integrante antes de integrar.
+3. **Registro de IA.** Si se utilizó IA, incluir la actualización del [registro](AI-uso.md) en el mismo pull request.
+4. **Validación del cliente.** Si el PR contiene un entregable finalizado, se puede mencionar al cliente para avisarle o solicitar su validación.
 
-⚠️ **REGLA CRÍTICA DE TRAZABILIDAD:** En los commits intermedios de una rama, usaremos SIEMPRE la palabra `refs` (ej. `[refs #12]`). **Nunca uses palabras clave como `closes` o `fixes` en los commits individuales**, ya que esto cerraría el Issue prematuramente antes de que la rama sea revisada en un Pull Request.
+## 6. Registro de uso de IA (`AI-uso.md`)
 
-
-**Ejemplos:**
-* `feat(mdd): añade clases Usuario y Reserva iniciales [refs #10]`
-* `docs(ia-uso): registra prompt de revisión de CU-02 [refs #22]`
-
-
----
-
-
-## 5. Pull Requests (PRs)
-
-
-Los Pull Requests son la herramienta obligatoria para integrar código en `main` y en `develop` y asegurar la revisión por pares (Peer Review).
-
-
-### 5.1. Título del PR:
-`[TIPO_PRINCIPAL] <Mismo título del Issue principal que resuelve>`
-* Ejemplo: `[Feat] [Tarea] Redactar v1 de la ficha del CU-03: Generar Informe`
-
-
-### 5.2. Reglas Obligatorias para Integración (Merge):
-
-
-1. **Cierre Automático:** El cuerpo del PR debe incluir obligatoriamente la frase `Closes #NÚMERO_ISSUE` (o `Fixes #NÚMERO_ISSUE`). Esto permite que GitHub cierre el Issue de forma automática, vinculándolo permanentemente al PR.
-2. **Revisión por Pares (Reviewers):** Se debe asignar al resto de miembros del equipo como "Reviewers". Es **obligatoria al menos 1 aprobación explícita** de otro miembro del equipo antes de realizar el *Merge*.
-3. **Sincronización de IA:** Si se ha utilizado Inteligencia Artificial para el trabajo de esa rama, el mismo PR debe incluir las actualizaciones correspondientes en el archivo `AI-uso.md`.
-4. **Validación del Cliente:** Si el PR contiene un entregable finalizado, se puede mencionar al `@usuario-github-del-cliente` para notificarle o solicitar su validación simbólica.
-
-
----
-
-
-## 6. Registro de Uso de IA (`AI-uso.md`)
-
-
-Todo uso de IA generativa debe auditarse para evaluar el pensamiento crítico del equipo. El archivo `AI-uso.md` debe mantenerse actualizado mediante la siguiente estructura incremental:
-
+Añadir al [registro de IA](AI-uso.md) las herramientas y fechas, el propósito por artefacto, la evaluación de las sugerencias, la conversación y los commits asociados. Dejar constancia de cómo se validó el resultado y de cualquier error detectado.
 
 ```markdown
-## Declaración de Uso de IA
-
-
 ## Herramientas Utilizadas
-- **Herramientas:** [ej. ChatGPT 4, Gemini Advanced]
-- **Fechas:** [Rango de fechas]
 
+- **Herramientas:** nombre y fechas de uso
 
 ## Contexto de Uso por Artefacto
 
+### Artefacto (issue #N)
 
-### [Nombre del Artefacto, ej. Modelo del Dominio]
-- **¿Se usó?:** [Sí/No]
-- **Propósito:** [Para qué se empleó la IA]
-- **Evaluación crítica:** [Qué sugirió la IA, qué se aceptó y qué se rechazó justificadamente]
-
+- **¿Se usó?:** Sí/No
+- **Propósito:** tarea para la que se utilizó IA
+- **Evaluación crítica:** propuestas aceptadas o descartadas y motivo
 
 ## Trazabilidad de Conversaciones
 
+### Conversación N: título (issue #N)
 
-### Conversación N: [Título descriptivo]
-- **URL:** `https://...`
+- **URL:** enlace, si está disponible para el equipo
 - **Fecha:** AAAA-MM-DD
-- **Resumen:** [Breve descripción de lo obtenido y si se modificó o descartó]
-- **Commits asociados:** [Enlaces a los commits afectados]
-
+- **Resumen:** resultado y ajustes aplicados
+- **Commits asociados:** referencias a los cambios
 
 ## Validación Humana
 
-
-- **Mecanismos de validación:** [Cómo se contrastó la salida de la IA con los apuntes, minutas o cliente]
-- **Errores detectados:** [Ejemplos concretos de alucinaciones o errores conceptuales corregidos por el equipo]
+- **Mecanismos de validación:** revisión realizada y fuentes consultadas
+- **Errores detectados:** correcciones aplicadas y motivos
+```
